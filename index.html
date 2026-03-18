@@ -3,58 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>North Crescent Facility Solutions Inc</title>
+
+  <title>Cleaning Services in Moncton | North Crescent Facility Solutions</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
- /* SCROLL SUAVE */
-html {
-  scroll-behavior: smooth;
-}
-
-/* NAV MEJORADO */
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: var(--primary);
-  font-weight: 500;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-/* Línea animada */
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: -5px;
-  background: var(--secondary);
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-nav a:hover {
-  color: var(--secondary);
-}
-
-/* BOTÓN CONTACTO */
-nav .cta {
-  background: var(--secondary);
-  color: white;
-  padding: 10px 18px;
-  border-radius: 25px;
-  margin-left: 25px;
-  transition: 0.3s;
-}
-
-nav .cta:hover {
-  background: var(--primary);
-}
   <style>
     :root {
       --primary: #1E3A5F;
@@ -64,6 +17,8 @@ nav .cta:hover {
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -85,13 +40,42 @@ nav .cta:hover {
 
     header img { height: 60px; }
 
+    /* NAV */
     nav a {
       margin-left: 20px;
       text-decoration: none;
       color: var(--primary);
       font-weight: 500;
+      position: relative;
+      transition: 0.3s;
     }
 
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: var(--secondary);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    nav a:hover { color: var(--secondary); }
+
+    nav .cta {
+      background: var(--secondary);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      margin-left: 25px;
+    }
+
+    nav .cta:hover { background: var(--primary); }
+
+    /* HERO */
     .hero {
       height: 90vh;
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
@@ -103,10 +87,7 @@ nav .cta:hover {
       color: white;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
+    .hero h1 { font-size: 3rem; margin-bottom: 20px; }
 
     .btn {
       background: var(--secondary);
@@ -199,8 +180,34 @@ nav .cta:hover {
 
 <header>
   <img src="images/logo.png" alt="North Crescent Facility Solutions Logo">
-    <nav>
-  <a href="#services">Services</a>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#process">Process</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#work">Our Work</a>
+    <a href="#contact" class="cta">Contact Us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Professional Cleaning Services in Moncton</h1>
+    <p>Reliable • Detailed • Trusted</p>
+    <a class="btn" href="#contact">Get a Free Quote</a>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card"><img src="images/residential.jpg"><h3>Residential Cleaning</h3></div>
+    <div class="card"><img src="images/commercial.jpg"><h3>Commercial Cleaning</h3></div>
+    <div class="card"><img src="images/postconstruction.jpg"><h3>Post-Construction</h3></div>
+  </div>
+</section>
+
 <section id="why">
   <h2>Why Choose Us</h2>
   <p>Reliable, professional and detail-oriented cleaning services.</p>
@@ -219,40 +226,12 @@ nav .cta:hover {
 <section id="work">
   <h2>Our Work</h2>
   <p>See the results of our professional cleaning services.</p>
-</section> 
-      <a href="#why">Why Us</a>
-  <a href="#process">Process</a>
-  <a href="#reviews">Reviews</a>
-  <a href="#work">Our Work</a>
-  <a href="#contact" class="cta">Contact Us</a>
-</nav>
-</header>
-
-<section class="hero">
-  <div>
-    <h1>Professional Cleaning Services</h1>
-    <p>Reliable • Professional • Detail-Oriented</p>
-    <a class="btn" href="#contact">Get a Free Quote</a>
-  </div>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-
-    <div class="card"><img src="images/residential.jpg"><h3>Residential Cleaning</h3></div>
-    <div class="card"><img src="images/commercial.jpg"><h3>Commercial Cleaning</h3></div>
-    <div class="card"><img src="images/postconstruction.jpg"><h3>Post-Construction</h3></div>
-    <div class="card"><img src="images/restaurant.jpg"><h3>Restaurant Cleaning</h3></div>
-    <div class="card"><img src="images/school.jpg"><h3>School Cleaning</h3></div>
-
-  </div>
 </section>
 
 <section id="about" class="about">
   <div>
     <h2>About Us</h2>
-    <p>We provide high-quality cleaning services for homes and businesses in Moncton.</p>
+    <p>Professional cleaning company serving Moncton with high standards and reliability.</p>
   </div>
   <img src="images/team.jpg">
 </section>
@@ -261,9 +240,8 @@ nav .cta:hover {
   <h2>Request a Free Quote</h2>
 
   <form action="https://formspree.io/f/xvzwvbed" method="POST">
-    
     <input type="hidden" name="_subject" value="New Cleaning Request">
-    
+
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email" required>
 
@@ -281,7 +259,6 @@ nav .cta:hover {
     <button type="submit">Request Quote</button>
 
     <p>We will contact you within 24 hours.</p>
-
   </form>
 </section>
 
