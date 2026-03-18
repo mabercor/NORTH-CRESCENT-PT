@@ -72,21 +72,72 @@ h1 {
   border-radius: 50px;
   text-decoration: none;
 }
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 60px;
+  gap: 8px;
+}
+
+.logo-image {
+  height: 60px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.logo-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.logo-svg {
+  height: 50px;
+  width: 50px;
+}
+
+.logo-text {
+  letter-spacing: 1px;
+}
+
+header a {
+  text-decoration: none;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="images/logo.png" alt="North Crescent Facility Solutions Logo">
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png"
+         alt="North Crescent Facility Solutions"
+         class="logo-image"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="logo-fallback" style="display: none;">
+      <svg viewBox="0 0 120 50" class="logo-svg" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="15" width="12" height="25" fill="#1E3A5F"/>
+        <rect x="30" y="5" width="12" height="35" fill="#1E3A5F"/>
+        <rect x="50" y="15" width="12" height="25" fill="#4A9B8C"/>
+        <rect x="70" y="10" width="12" height="30" fill="#2EC4B6"/>
+        <path d="M 10 45 Q 60 55 110 45" stroke="#4A9B8C" stroke-width="3" fill="none"/>
+      </svg>
+      <span class="logo-text">NC</span>
+    </div>
+  </a>
 
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="why.html">Why Us</a>
+    <a href="work.html">Our Work</a>
     <a href="process.html">Process</a>
     <a href="reviews.html">Reviews</a>
-    <a href="work.html">Our Work</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html" class="cta">Contact Us</a>
   </nav>
