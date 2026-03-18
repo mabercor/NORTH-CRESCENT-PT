@@ -56,6 +56,163 @@
       border-radius: 25px;
     }
 
+    /* HERO HEADER CON RAYOS DE LUZ */
+    .hero-header {
+      position: relative;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+      padding: 100px 40px;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(46, 196, 182, 0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* RAYOS DE LUZ ANIMADOS */
+    .light-rays {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .ray {
+      position: absolute;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+      animation: lightRay 3s ease-in-out infinite;
+      will-change: opacity, height;
+    }
+
+    .ray-1 {
+      left: 10%;
+      height: 300px;
+      animation-delay: 0s;
+    }
+
+    .ray-2 {
+      left: 30%;
+      height: 250px;
+      animation-delay: 0.5s;
+    }
+
+    .ray-3 {
+      left: 50%;
+      height: 320px;
+      animation-delay: 1s;
+    }
+
+    .ray-4 {
+      left: 70%;
+      height: 280px;
+      animation-delay: 1.5s;
+    }
+
+    .ray-5 {
+      left: 90%;
+      height: 300px;
+      animation-delay: 2s;
+    }
+
+    @keyframes lightRay {
+      0% {
+        opacity: 0;
+        height: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        height: 400px;
+      }
+    }
+
+    /* CONTENIDO DEL HERO HEADER */
+    .hero-header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2EC4B6;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      letter-spacing: 1px;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 400;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* RESPONSIVE HERO HEADER */
+    @media(max-width: 768px) {
+      .hero-header {
+        padding: 60px 20px;
+        min-height: 300px;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+
+      .hero-tagline {
+        font-size: 1rem;
+      }
+
+      .ray {
+        width: 1px;
+      }
+
+      .ray-1 { left: 5%; height: 220px; }
+      .ray-2 { left: 25%; height: 185px; }
+      .ray-3 { left: 50%; height: 240px; }
+      .ray-4 { left: 75%; height: 210px; }
+      .ray-5 { left: 95%; height: 220px; }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      .ray {
+        animation: none;
+      }
+    }
+
     /* HERO */
     .hero {
       height: 90vh;
@@ -176,6 +333,23 @@
     <a href="contact.html" class="cta">Contact Us</a>
   </nav>
 </header>
+
+<!-- HERO HEADER CON RAYOS DE LUZ -->
+<section class="hero-header">
+  <div class="light-rays">
+    <div class="ray ray-1"></div>
+    <div class="ray ray-2"></div>
+    <div class="ray ray-3"></div>
+    <div class="ray ray-4"></div>
+    <div class="ray ray-5"></div>
+  </div>
+
+  <div class="hero-header-content">
+    <h1 class="hero-title">NORTH CRESCENT</h1>
+    <h2 class="hero-subtitle">FACILITY SOLUTIONS INC</h2>
+    <p class="hero-tagline">Professional Facility Cleaning Services</p>
+  </div>
+</section>
 
 <!-- HERO -->
 <section class="hero">
