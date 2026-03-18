@@ -122,6 +122,96 @@
       color: white;
     }
 
+    /* WHY CHOOSE US SECTION */
+    .why-choose-us {
+      background: linear-gradient(135deg, var(--light) 0%, white 100%);
+      padding: 80px 40px;
+    }
+
+    .why-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .why-choose-us h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .why-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--secondary);
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .why-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      border-top: 4px solid var(--accent);
+    }
+
+    .why-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .why-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 auto 15px;
+    }
+
+    .why-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .why-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* RESPONSIVE WHY CHOOSE US */
+    @media(max-width: 768px) {
+      .why-choose-us {
+        padding: 60px 20px;
+      }
+
+      .why-choose-us h2 {
+        font-size: 2rem;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* FLOAT BUTTON */
     .quote-float {
       position: fixed;
@@ -189,19 +279,43 @@
   </div>
 </section>
 
-<!-- QUICK NAVIGATION -->
-<section class="quick-links">
-  <h2>Explore Our Services</h2>
+<!-- WHY CHOOSE US -->
+<section class="why-choose-us">
+  <div class="why-container">
+    <h2>Why Choose Us</h2>
+    <p class="why-subtitle">We go above and beyond to deliver exceptional cleaning services</p>
 
-  <div class="links">
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Reliable Service</h3>
+        <p>We show up on time, every time.</p>
+      </div>
 
-    <a href="services.html" class="link-card">Our Services</a>
-    <a href="process.html" class="link-card">Our Process</a>
-    <a href="reviews.html" class="link-card">Client Reviews</a>
-    <a href="work.html" class="link-card">Our Work</a>
-    <a href="gallery.html" class="link-card">Gallery</a>
-    <a href="contact.html" class="link-card">Get a Quote</a>
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Attention to Detail</h3>
+        <p>No corner goes untouched.</p>
+      </div>
 
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Professional Team</h3>
+        <p>Trained and insured staff.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Flexible Scheduling</h3>
+        <p>Book cleanings that fit your schedule.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Satisfaction Guaranteed</h3>
+        <p>100% satisfaction guaranteed.</p>
+      </div>
+    </div>
   </div>
 </section>
 
