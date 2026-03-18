@@ -73,7 +73,6 @@
 
     nav .cta:hover { background: var(--primary); }
 
-    /* HERO */
     .hero {
       height: 90vh;
       background: linear-gradient(rgba(30,58,95,0.7), rgba(30,58,95,0.7)),
@@ -103,7 +102,6 @@
       padding: 20px;
       border-radius: 12px;
       backdrop-filter: blur(6px);
-      font-weight: 400;
     }
 
     section { padding: 60px 40px; }
@@ -242,7 +240,6 @@
   <div>
     <h1>Professional Cleaning Services in Moncton</h1>
     <p class="hero-sub">Reliable • Detailed • Trusted</p>
-
     <p class="hero-highlight">
       Reliable service with attention to detail and consistently spotless results,
       keeping homes and businesses clean, fresh, and welcoming every day.
@@ -250,24 +247,47 @@
   </div>
 </section>
 
-<!-- resto del código igual -->
-
 <section id="services">
   <h2>Our Services</h2>
   <div class="services">
-    <div class="card"><img src="images/residential.jpg"><h3>Residential Cleaning</h3></div>
-    <div class="card"><img src="images/commercial.jpg"><h3>Commercial Cleaning</h3></div>
-    <div class="card"><img src="images/postconstruction.jpg"><h3>Post-Construction</h3></div>
-  </div>
-</section>
 
-<section id="contact">
-  <h2>Request a Free Quote</h2>
-  <form action="https://formspree.io/f/xvzwvbed" method="POST">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <button type="submit">Request Quote</button>
-  </form>
+    <div class="card">
+      <img src="images/residential.jpg">
+      <h3>Residential Cleaning</h3>
+      <p>Professional home cleaning that removes dust, grime, and buildup, leaving your living space fresh and comfortable.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/deep-cleaning.jpg">
+      <h3>Deep Cleaning - Restaurants</h3>
+      <p>We remove grease from ovens, hoods, and surfaces, leaving your kitchen spotless and inspection-ready.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/move.jpg">
+      <h3>Move-In / Move-Out</h3>
+      <p>Complete cleaning so your space is spotless and ready for the next chapter.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/commercial.jpg">
+      <h3>Commercial Cleaning</h3>
+      <p>Cleaning for offices and commercial spaces to keep your workplace spotless.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/airbnb.jpg">
+      <h3>Airbnb Cleaning</h3>
+      <p>Keep your rental guest-ready and ensure great reviews.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/postconstruction.jpg">
+      <h3>Post-Construction</h3>
+      <p>We remove dust and debris, leaving your property move-in ready.</p>
+    </div>
+
+  </div>
 </section>
 
 <a class="quote-float" href="#contact">Get a Free Quote</a>
