@@ -18,13 +18,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-    }
+    body { font-family: 'Poppins', sans-serif; background: var(--light); }
 
     header {
       background: white;
@@ -33,45 +27,21 @@
       align-items: center;
       padding: 20px 40px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
-
-    header img { height: 60px; }
 
     nav a {
       margin-left: 20px;
       text-decoration: none;
       color: var(--primary);
       font-weight: 500;
-      position: relative;
-      transition: 0.3s;
     }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      left: 0;
-      bottom: -5px;
-      background: var(--accent);
-      transition: width 0.3s;
-    }
-
-    nav a:hover::after { width: 100%; }
-    nav a:hover { color: var(--accent); }
 
     nav .cta {
       background: var(--accent);
       color: white;
       padding: 10px 18px;
       border-radius: 25px;
-      margin-left: 25px;
     }
-
-    nav .cta:hover { background: var(--primary); }
 
     .hero {
       height: 90vh;
@@ -84,108 +54,12 @@
       color: white;
     }
 
-    .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-
-    .hero-sub {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
     .hero-highlight {
-      max-width: 700px;
-      margin: 0 auto;
-      margin-top: 15px;
-      font-size: 1.2rem;
-      line-height: 1.6;
       background: rgba(0,0,0,0.4);
       padding: 20px;
       border-radius: 12px;
-      backdrop-filter: blur(6px);
-    }
-
-    section { padding: 60px 40px; }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: var(--primary);
-      font-size: 2rem;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-align: center;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card h3 {
-      padding: 15px;
-      color: var(--primary);
-    }
-
-    .card p {
-      padding: 0 15px 20px;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    form {
-      display: grid;
-      gap: 15px;
-      max-width: 500px;
-    }
-
-    input, select, textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 15px;
-      border-radius: 50px;
-      text-decoration: none;
-      z-index: 1000;
+      max-width: 600px;
+      margin-top: 20px;
     }
 
     .quote-float {
@@ -197,15 +71,17 @@
       padding: 15px 20px;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-      transition: all 0.3s;
-      z-index: 1000;
     }
 
-    .quote-float:hover {
-      background: var(--primary);
-      transform: scale(1.05);
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50px;
+      text-decoration: none;
     }
 
     footer {
@@ -214,32 +90,30 @@
       text-align: center;
       padding: 30px;
     }
-
-    @media(max-width:768px){
-      .about { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2rem; }
-    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <img src="images/logo.png" alt="North Crescent Facility Solutions Logo">
+  <img src="images/logo.png" height="60">
+
   <nav>
-    <a href="#services">Services</a>
-    <a href="#why">Why Us</a>
-    <a href="#process">Process</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#work">Our Work</a>
-    <a href="#contact" class="cta">Contact Us</a>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="why.html">Why Us</a>
+    <a href="process.html">Process</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="work.html">Our Work</a>
+    <a href="contact.html" class="cta">Contact Us</a>
   </nav>
 </header>
 
 <section class="hero">
   <div>
     <h1>Professional Cleaning Services in Moncton</h1>
-    <p class="hero-sub">Reliable • Detailed • Trusted</p>
+    <p>Reliable • Detailed • Trusted</p>
+
     <p class="hero-highlight">
       Reliable service with attention to detail and consistently spotless results,
       keeping homes and businesses clean, fresh, and welcoming every day.
@@ -247,50 +121,7 @@
   </div>
 </section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-
-    <div class="card">
-      <img src="images/residential.jpg">
-      <h3>Residential Cleaning</h3>
-      <p>Professional home cleaning that removes dust, grime, and buildup, leaving your living space fresh and comfortable.</p>
-    </div>
-
-    <div class="card">
-      <img src="images/deep-cleaning.jpg">
-      <h3>Deep Cleaning - Restaurants</h3>
-      <p>We remove grease from ovens, hoods, and surfaces, leaving your kitchen spotless and inspection-ready.</p>
-    </div>
-
-    <div class="card">
-      <img src="images/move.jpg">
-      <h3>Move-In / Move-Out</h3>
-      <p>Complete cleaning so your space is spotless and ready for the next chapter.</p>
-    </div>
-
-    <div class="card">
-      <img src="images/commercial.jpg">
-      <h3>Commercial Cleaning</h3>
-      <p>Cleaning for offices and commercial spaces to keep your workplace spotless.</p>
-    </div>
-
-    <div class="card">
-      <img src="images/airbnb.jpg">
-      <h3>Airbnb Cleaning</h3>
-      <p>Keep your rental guest-ready and ensure great reviews.</p>
-    </div>
-
-    <div class="card">
-      <img src="images/postconstruction.jpg">
-      <h3>Post-Construction</h3>
-      <p>We remove dust and debris, leaving your property move-in ready.</p>
-    </div>
-
-  </div>
-</section>
-
-<a class="quote-float" href="#contact">Get a Free Quote</a>
+<a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">WhatsApp</a>
 
 <footer>
