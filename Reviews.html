@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Client Reviews | North Crescent Facility Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #1E3A5F;
+  --secondary: #4A9B8C;
+  --accent: #2EC4B6;
+  --light: #F5F7FA;
+  --dark: #0F172A;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--light);
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: white;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+h1 {
+  text-align: center;
+  margin: 40px;
+  color: var(--primary);
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.review-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.stars {
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.quote-float {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="images/logo.png" height="60">
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="why.html">Why Us</a>
+<a href="process.html">Process</a>
+<a href="reviews.html">Reviews</a>
+<a href="work.html">Our Work</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<h1>Client Reviews</h1>
+
+<div class="reviews">
+
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>"Excellent service! My house has never been this clean."</p>
+<strong>- Sarah M.</strong>
+</div>
+
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>"Very professional and reliable. Highly recommended."</p>
+<strong>- John D.</strong>
+</div>
+
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>"Amazing attention to detail. Will hire again!"</p>
+<strong>- Emily R.</strong>
+</div>
+
+</div>
+
+<a class="quote-float" href="contact.html">Get a Free Quote</a>
+
+</body>
+</html>
