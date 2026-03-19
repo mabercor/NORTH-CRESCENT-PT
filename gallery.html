@@ -25,7 +25,6 @@ body {
   color: var(--dark);
 }
 
-/* HEADER */
 header {
   background: white;
   display: flex;
@@ -53,7 +52,6 @@ nav .cta {
   border-radius: 25px;
 }
 
-/* HERO */
 .hero-small {
   height: 40vh;
   background: linear-gradient(rgba(30,58,95,0.7), rgba(30,58,95,0.7)),
@@ -68,7 +66,6 @@ nav .cta {
   font-size: 2.5rem;
 }
 
-/* GALLERY */
 section { padding: 60px 40px; }
 
 h2 {
@@ -100,7 +97,6 @@ h2 {
   transform: scale(1.1);
 }
 
-/* FLOAT BUTTON */
 .quote-float {
   position: fixed;
   bottom: 90px;
@@ -117,7 +113,6 @@ h2 {
   background: var(--primary);
 }
 
-/* WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -129,7 +124,6 @@ h2 {
   text-decoration: none;
 }
 
-/* FOOTER */
 footer {
   background: var(--primary);
   color: white;
@@ -155,12 +149,10 @@ footer {
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero-small">
 <h1>Our Cleaning Work Gallery</h1>
 </section>
 
-<!-- GALLERY -->
 <section>
 <h2>See Our Results</h2>
 
@@ -200,5 +192,31 @@ footer {
 <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
-</body>
-</html>
+<script>
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  if (lang === 'fr') {
+    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Processus';
+    document.querySelectorAll('nav a')[3].innerText = 'Avis';
+    document.querySelectorAll('nav a')[4].innerText = 'Nos travaux';
+    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+
+    document.querySelector('.quote-float').innerText = 'Obtenir un devis';
+
+    document.querySelector('.hero-small h1').innerText = 'Galerie de nos travaux';
+    document.querySelector('h2').innerText = 'Voir nos résultats';
+
+  } else {
+    document.querySelectorAll('nav a')[0].innerText = 'Home';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Process';
+    document.querySelectorAll('nav a')[3].innerText = 'Reviews';
+    document.querySelectorAll('nav a')[4].innerText = 'Our Work';
+    document.querySelectorAll('nav a')[5].innerText = 'Gallery';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact Us';
+
+    document.querySelector('.quote-float').innerText = 'Get a Free
