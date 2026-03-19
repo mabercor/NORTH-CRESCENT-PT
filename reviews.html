@@ -5,12 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Client Reviews | North Crescent Facility Solutions</title>
+<meta name="description" content="Read real client reviews of our professional cleaning services in Moncton, NB. Trusted by homeowners and businesses.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* ✅ SCROLL FIX */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+</style>
+
 </head>
 
-<body>
+<body data-page="reviews">
 
 <header>
   <div class="container header-inner">
@@ -22,7 +33,6 @@
       </div>
     </div>
 
-    <!-- NAV + LANG -->
     <div class="nav-wrapper">
       <nav>
         <a href="index.html">Home</a>
@@ -70,7 +80,7 @@
       <div class="divider"></div>
 
       <p class="text-box" id="section-text">
-        We take pride in delivering high-quality cleaning services. Here’s what our clients say about their experience.
+        We take pride in delivering high-quality cleaning services. Here’s what our clients say.
       </p>
 
       <div class="grid grid-3">
@@ -95,13 +105,13 @@
 
         <div class="card">
           <div class="badge">★★★★★</div>
-          <p id="rev4">"Great communication and outstanding results. Will definitely book again."</p>
+          <p id="rev4">"Great communication and outstanding results."</p>
           <strong>- Michael T.</strong>
         </div>
 
         <div class="card">
           <div class="badge">★★★★★</div>
-          <p id="rev5">"Reliable and efficient service. Highly satisfied with the quality."</p>
+          <p id="rev5">"Reliable and efficient service. Highly satisfied."</p>
           <strong>- Laura K.</strong>
         </div>
 
@@ -109,7 +119,7 @@
           <div class="badge" id="trust-badge">Trusted</div>
           <h3 id="trust-title">Consistent Quality</h3>
           <p id="trust-text">
-            We focus on delivering reliable, detailed, and professional cleaning services every time.
+            We deliver reliable, detailed, and professional cleaning services every time.
           </p>
         </div>
 
@@ -130,10 +140,12 @@
       <div class="divider"></div>
 
       <p class="text-box" id="cta-text">
-        Join our satisfied clients and get a professional cleaning service you can trust.
+        Join our satisfied clients and enjoy a professional cleaning service you can trust.
       </p>
 
-      <a href="contact.html" class="btn btn-primary" id="cta-btn">Request a Free Quote</a>
+      <a href="contact.html" class="btn btn-primary" id="cta-btn">
+        Request a Free Quote
+      </a>
 
     </div>
 
@@ -141,63 +153,15 @@
 </section>
 
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html" id="float-btn">Get a Free Quote</a>
-<a class="whatsapp" href="https://wa.me/14288880542">💬</a>
+<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="whatsapp" href="https://wa.me/14288880542" target="_blank">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
-<!-- 🌍 TRANSLATOR CORREGIDO -->
-<script>
-function setLanguage(lang) {
-  localStorage.setItem('lang', lang);
-  applyLanguage();
-}
-
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
-
-  if (lang === 'fr') {
-
-    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
-    document.querySelectorAll('nav a')[1].innerText = 'Services';
-    document.querySelectorAll('nav a')[2].innerText = 'Processus';
-    document.querySelectorAll('nav a')[3].innerText = 'Avis';
-    document.querySelectorAll('nav a')[4].innerText = 'Nos travaux';
-    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
-    document.querySelectorAll('nav a')[6].innerText = 'Contact';
-
-    document.getElementById('badge-reviews').innerText = 'Avis clients';
-    document.getElementById('hero-title').innerText = 'Ce que disent nos clients';
-    document.getElementById('hero-sub').innerText = 'Approuvé par particuliers et entreprises';
-
-    document.getElementById('section-title').innerText = 'Avis réels';
-    document.getElementById('section-text').innerText = 'Nous sommes fiers de fournir un service de qualité. Voici les avis de nos clients.';
-
-    document.getElementById('rev1').innerText = "Service excellent ! Maison impeccable.";
-    document.getElementById('rev2').innerText = "Très professionnel et fiable.";
-    document.getElementById('rev3').innerText = "Attention aux détails incroyable.";
-    document.getElementById('rev4').innerText = "Communication parfaite et résultats excellents.";
-    document.getElementById('rev5').innerText = "Service fiable et efficace.";
-
-    document.getElementById('trust-badge').innerText = 'Fiable';
-    document.getElementById('trust-title').innerText = 'Qualité constante';
-    document.getElementById('trust-text').innerText = 'Nous garantissons un service professionnel à chaque visite.';
-
-    document.getElementById('cta-title').innerText = 'Prêt à essayer notre service ?';
-    document.getElementById('cta-text').innerText = 'Rejoignez nos clients satisfaits dès aujourd’hui.';
-    document.getElementById('cta-btn').innerText = 'Demander un devis';
-
-    document.getElementById('float-btn').innerText = 'Devis';
-
-  } else {
-    console.log("Language: EN");
-  }
-}
-
-document.addEventListener('DOMContentLoaded', applyLanguage);
-</script>
+<!-- ✅ TRANSLATOR GLOBAL -->
+<script src="js/translator.js"></script>
 
 </body>
 </html>
