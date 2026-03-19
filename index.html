@@ -1,16 +1,27 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Professional Facility Cleaning | North Crescent Facility Solutions Inc</title>
+<title>Professional Cleaning Services | North Crescent Facility Solutions Inc</title>
+<meta name="description" content="Professional residential and commercial cleaning services in Moncton, NB. Reliable, detailed, and trusted cleaning solutions.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* ✅ SCROLL FIX */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+</style>
+
 </head>
 
-<body>
+<body data-page="index">
 
 <header>
   <div class="container header-inner">
@@ -33,7 +44,6 @@
         <a href="contact.html" class="cta">Contact</a>
       </nav>
 
-      <!-- BOTÓN IDIOMA -->
       <div class="lang-switch">
         <button onclick="setLanguage('en')">EN</button>
         <button onclick="setLanguage('fr')">FR</button>
@@ -45,6 +55,7 @@
 
 <main>
 
+<!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
 
@@ -53,7 +64,6 @@
 
       <p class="hero-sub" id="hero-sub">
         Professional residential and commercial cleaning services in Moncton.
-        Explore our services and find the perfect solution for your space.
       </p>
 
       <a href="contact.html" class="btn" id="hero-btn">Request a Quote</a>
@@ -70,6 +80,7 @@
   </div>
 </section>
 
+<!-- ABOUT -->
 <section>
   <div class="container">
     <div class="section-box">
@@ -79,14 +90,14 @@
 
       <p class="text-box" id="about-text">
         North Crescent Facility Solutions Inc is a professional cleaning company based in Moncton, New Brunswick.
-        We provide high-quality residential and commercial cleaning services with a strong commitment to consistency,
-        attention to detail, and customer satisfaction.
+        We provide high-quality residential and commercial cleaning services with attention to detail and customer satisfaction.
       </p>
 
     </div>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section>
   <div class="container">
 
@@ -106,6 +117,7 @@
   </div>
 </section>
 
+<!-- WHY -->
 <section>
   <div class="container">
     <div class="section-box">
@@ -123,6 +135,7 @@
   </div>
 </section>
 
+<!-- CTA -->
 <section>
   <div class="container">
     <div class="section-box" style="text-align:center;">
@@ -145,70 +158,16 @@
 
 </main>
 
-<a class="quote-float" href="contact.html">Quote</a>
-<a class="whatsapp" href="https://wa.me/14288880542">💬</a>
+<!-- FLOAT BUTTONS -->
+<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="whatsapp" href="https://wa.me/14288880542" target="_blank">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
-<!-- ✅ SCRIPT CORREGIDO -->
-<script>
-function setLanguage(lang) {
-  localStorage.setItem('lang', lang);
-  applyLanguage();
-}
-
-function safeText(id, text) {
-  const el = document.getElementById(id);
-  if (el) el.innerText = text;
-}
-
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
-
-  const navLinks = document.querySelectorAll('nav a');
-  const quoteBtn = document.querySelector('.quote-float');
-
-  if (lang === 'fr') {
-
-    if (navLinks.length >= 7) {
-      navLinks[0].innerText = 'Accueil';
-      navLinks[1].innerText = 'Services';
-      navLinks[2].innerText = 'Processus';
-      navLinks[3].innerText = 'Avis';
-      navLinks[4].innerText = 'Réalisations';
-      navLinks[5].innerText = 'Galerie';
-      navLinks[6].innerText = 'Contact';
-    }
-
-    if (quoteBtn) quoteBtn.innerText = 'Devis';
-
-    safeText('hero-title', 'Services de nettoyage professionnels');
-    safeText('hero-sub', 'Services résidentiels et commerciaux à Moncton.');
-    safeText('hero-btn', 'Demander un devis');
-    safeText('hero-btn2', 'Voir nos services');
-
-    safeText('about-title', 'À propos de nous');
-    safeText('services-mini-title', 'Nos services');
-    safeText('services-btn', 'Voir tous les services');
-
-    safeText('w1', 'Service fiable');
-    safeText('w2', 'Attention aux détails');
-    safeText('w3', 'Équipe professionnelle');
-
-    safeText('cta-title', 'Prêt à travailler avec nous ?');
-    safeText('cta-text', 'Contactez-nous ou explorez nos services.');
-    safeText('cta-btn', 'Obtenir un devis');
-    safeText('cta-btn2', 'Explorer les services');
-
-  } else {
-    if (quoteBtn) quoteBtn.innerText = 'Quote';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', applyLanguage);
-</script>
+<!-- ✅ TRANSLATOR GLOBAL -->
+<script src="js/translator.js"></script>
 
 </body>
 </html>
