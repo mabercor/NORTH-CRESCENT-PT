@@ -23,20 +23,30 @@
       </div>
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="work.html">Our Work</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
+    <!-- NAV + LANG -->
+    <div class="nav-wrapper">
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="work.html">Our Work</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <!-- LANGUAGE SWITCH -->
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+      </div>
+
+    </div>
 
   </div>
 </header>
 
-<!-- ✅ MAIN AGREGA ESTRUCTURA CORRECTA -->
 <main>
 
 <!-- HERO -->
@@ -44,8 +54,8 @@
   <div class="container hero-grid">
 
     <div class="hero-text">
-      <h1>Get Your Free Quote</h1>
-      <p class="hero-sub">
+      <h1 id="heroTitle">Get Your Free Quote</h1>
+      <p class="hero-sub" id="heroSub">
         Fast response. Professional service. Reliable results.
       </p>
     </div>
@@ -63,10 +73,10 @@
 
     <div class="section-box">
 
-      <h2 class="section-title">Let’s Talk</h2>
+      <h2 class="section-title" id="contactTitle">Let’s Talk</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="contactDesc">
         Tell us about your cleaning needs and we’ll get back to you within 24 hours.
       </p>
 
@@ -74,11 +84,11 @@
 
         <!-- INFO -->
         <div class="card">
-          <h3>Contact Info</h3>
+          <h3 id="infoTitle">Contact Info</h3>
 
-          <p><strong>Location:</strong> Moncton, NB</p>
+          <p><strong id="locLabel">Location:</strong> Moncton, NB</p>
           <p><strong>Email:</strong> info@northcrescent.ca</p>
-          <p><strong>Phone:</strong> <a href="tel:+14288880542">+1 428 888 0542</a></p>
+          <p><strong id="phoneLabel">Phone:</strong> <a href="tel:+14288880542">+1 428 888 0542</a></p>
 
           <div style="margin-top:15px;">
             <a href="#" class="btn">Facebook</a>
@@ -89,15 +99,15 @@
         <!-- FORM -->
         <div class="card">
 
-          <h3>Request a Quote</h3>
+          <h3 id="formTitle">Request a Quote</h3>
 
           <form id="contactForm" action="https://formspree.io/f/xvzwvbed" method="POST">
 
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="tel" name="phone" placeholder="Phone Number">
+            <input type="text" name="name" id="nameInput" placeholder="Full Name" required>
+            <input type="email" name="email" id="emailInput" placeholder="Email Address" required>
+            <input type="tel" name="phone" id="phoneInput" placeholder="Phone Number">
 
-            <select name="service" required>
+            <select name="service" id="serviceSelect" required>
               <option value="">Select Service</option>
               <option>Residential Cleaning</option>
               <option>Deep Cleaning</option>
@@ -107,9 +117,11 @@
               <option>Airbnb Cleaning</option>
             </select>
 
-            <textarea name="message" rows="4" placeholder="Describe your needs..." required></textarea>
+            <textarea name="message" rows="4" id="messageInput" placeholder="Describe your needs..." required></textarea>
 
-            <button type="submit" class="btn">Request a Free Quote</button>
+            <button type="submit" class="btn" id="submitBtn">
+              Request a Free Quote
+            </button>
 
             <div class="success-message" id="successMessage" style="display:none; margin-top:10px;">
               ✅ Message sent successfully!
@@ -132,14 +144,14 @@
 
     <div class="section-box" style="text-align:center;">
 
-      <h2>Ready to Book Your Cleaning?</h2>
+      <h2 id="ctaTitle">Ready to Book Your Cleaning?</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="ctaText">
         Get professional cleaning with reliable results and attention to detail.
       </p>
 
-      <a href="tel:+14288880542" class="btn">Call Now</a>
+      <a href="tel:+14288880542" class="btn" id="ctaBtn">Call Now</a>
 
     </div>
 
@@ -149,7 +161,7 @@
 </main>
 
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html">Quote</a>
+<a class="quote-float" href="contact.html" id="floatBtn">Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
 <footer>
@@ -157,6 +169,7 @@
 </footer>
 
 <script>
+// ===== FORM =====
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
 
@@ -178,6 +191,57 @@ form.addEventListener("submit", async function(e) {
     alert("Error sending message.");
   }
 });
+
+// ===== LANGUAGE SYSTEM =====
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
+}
+
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  if (lang === 'fr') {
+
+    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Processus';
+    document.querySelectorAll('nav a')[3].innerText = 'Avis';
+    document.querySelectorAll('nav a')[4].innerText = 'Nos travaux';
+    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+
+    document.getElementById('heroTitle').innerText = 'Obtenez votre devis gratuit';
+    document.getElementById('heroSub').innerText = 'Réponse rapide. Service professionnel. Résultats fiables.';
+
+    document.getElementById('contactTitle').innerText = 'Parlons-en';
+    document.getElementById('contactDesc').innerText = 'Parlez-nous de vos besoins et nous vous répondrons sous 24h.';
+
+    document.getElementById('infoTitle').innerText = 'Informations';
+    document.getElementById('locLabel').innerText = 'Localisation :';
+    document.getElementById('phoneLabel').innerText = 'Téléphone :';
+
+    document.getElementById('formTitle').innerText = 'Demander un devis';
+    document.getElementById('nameInput').placeholder = 'Nom complet';
+    document.getElementById('emailInput').placeholder = 'Adresse e-mail';
+    document.getElementById('phoneInput').placeholder = 'Numéro de téléphone';
+    document.getElementById('serviceSelect').options[0].text = 'Sélectionner un service';
+    document.getElementById('messageInput').placeholder = 'Décrivez vos besoins...';
+
+    document.getElementById('submitBtn').innerText = 'Demander un devis';
+
+    document.getElementById('ctaTitle').innerText = 'Prêt à réserver ?';
+    document.getElementById('ctaText').innerText = 'Service professionnel avec des résultats fiables.';
+    document.getElementById('ctaBtn').innerText = 'Appeler';
+
+    document.getElementById('floatBtn').innerText = 'Devis';
+
+  } else {
+    document.getElementById('floatBtn').innerText = 'Quote';
+  }
+}
+
+window.onload = applyLanguage;
 </script>
 
 </body>
