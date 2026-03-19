@@ -1,4 +1,4 @@
-/* ===== VARIABLES ===== */ 
+/* ===== VARIABLES ===== */  
 :root {
   --primary: #1E3A5F;
   --secondary: #4A9B8C;
@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 
-/* ===== BASE LAYOUT (FIX MULTIPAGE) ===== */
+/* ===== BASE LAYOUT ===== */
 html, body {
   height: 100%;
   scroll-behavior: smooth;
@@ -29,13 +29,14 @@ body {
 
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 main {
   flex: 1;
 }
 
-/* ===== GLOBAL ELEMENTS ===== */
+/* ===== GLOBAL ===== */
 img {
   max-width: 100%;
   height: auto;
@@ -109,7 +110,6 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* CTA NAV */
 nav a.cta {
   background: var(--secondary);
   color: white;
@@ -121,19 +121,27 @@ nav a.cta:hover {
   background: var(--accent);
 }
 
-/* ===== HERO (ONLY INDEX) ===== */
+/* ===== HERO (EMPRESA - FIX FINAL) ===== */
 .hero {
-  min-height: 80vh;
-  background: linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.85)),
-  url('images/hero.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: white;
+  background: white;
+  color: var(--dark);
+  padding: 60px 0;
 }
 
-.hero h1 {
-  font-size: clamp(32px, 5vw, 48px);
+/* GRID HERO */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: clamp(28px, 4vw, 44px);
   font-weight: 800;
 }
 
@@ -141,7 +149,12 @@ nav a.cta:hover {
   margin: 15px 0;
 }
 
-/* ===== PAGE HEADER (OTHER PAGES) ===== */
+.hero-image img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ===== PAGE HEADER ===== */
 .page-header {
   background: var(--primary);
   color: white;
@@ -297,9 +310,12 @@ footer {
     justify-content: center;
   }
 
-  .hero {
-    min-height: 60vh;
-    padding: 40px 20px;
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text {
+    text-align: center;
   }
 
 }
