@@ -33,6 +33,9 @@ header {
   align-items: center;
   padding: 20px 40px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header img { height: 60px; }
@@ -42,7 +45,6 @@ nav a {
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
-  position: relative;
 }
 
 nav a:hover { color: var(--accent); }
@@ -70,24 +72,97 @@ nav .cta {
   font-size: 2.5rem;
 }
 
-/* SECTION */
-section { padding: 60px 40px; }
+/* PAGE LAYOUT */
+.page-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
 
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
+.sidebar {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar h3 {
   color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 12px;
+}
+
+.sidebar a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.sidebar-cta {
+  display: block;
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.sidebar-cta:hover {
+  background: var(--primary);
+}
+
+.main-content {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.main-content h2 {
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
 /* SERVICES GRID */
-.services {
+.cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
 .card {
-  background: white;
+  background: var(--light);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
@@ -113,7 +188,39 @@ h2 {
 
 .card p {
   padding: 0 15px 20px;
+  color: #555;
+  line-height: 1.6;
 }
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
+  gap: 20px;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 15px 25px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.nav-button.next { margin-left: auto; }
 
 /* FLOAT BUTTON */
 .quote-float {
@@ -151,6 +258,31 @@ footer {
   text-align: center;
   padding: 30px;
 }
+
+@media(max-width: 1024px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .nav-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0 !important;
+  }
+}
 </style>
 </head>
 
@@ -175,50 +307,90 @@ footer {
 <h1>Our Professional Cleaning Services</h1>
 </section>
 
-<!-- SERVICES -->
-<section>
-<h2>What We Offer</h2>
+<!-- PAGE LAYOUT -->
+<div class="page-container">
 
-<div class="services">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
 
-<div class="card">
-<img src="images/residential.jpg">
-<h3>Residential Cleaning</h3>
-<p>Professional home cleaning that removes dust, grime, and buildup, leaving your living space fresh and comfortable.</p>
+    <div class="sidebar-section">
+      <h3>Service Categories</h3>
+      <ul>
+        <li>🏠 <a href="#residential">Residential Cleaning</a></li>
+        <li>🍽️ <a href="#deep">Deep Cleaning</a></li>
+        <li>📦 <a href="#move">Move-In / Move-Out</a></li>
+        <li>🏢 <a href="#commercial">Commercial Cleaning</a></li>
+        <li>🛏️ <a href="#airbnb">Airbnb Cleaning</a></li>
+        <li>🏗️ <a href="#post">Post-Construction</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Quick Contact</h3>
+      <ul>
+        <li>📞 +1 (428) 888-0542</li>
+        <li>📧 northcrescent@email.com</li>
+        <li>📍 Moncton, NB</li>
+        <li>🕐 Mon–Sat: 8am–6pm</li>
+      </ul>
+    </div>
+
+    <a class="sidebar-cta" href="contact.html">Get a Quote →</a>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h2>What We Offer</h2>
+
+    <div class="cards-grid">
+
+      <div class="card" id="residential">
+        <img src="images/residential.jpg" alt="Residential Cleaning">
+        <h3>Residential Cleaning</h3>
+        <p>Professional home cleaning that removes dust, grime, and buildup, leaving your living space fresh and comfortable.</p>
+      </div>
+
+      <div class="card" id="deep">
+        <img src="images/deep-cleaning.jpg" alt="Deep Cleaning">
+        <h3>Deep Cleaning - Restaurants</h3>
+        <p>We remove grease from ovens, hoods, and surfaces, leaving your kitchen spotless and inspection-ready.</p>
+      </div>
+
+      <div class="card" id="move">
+        <img src="images/move.jpg" alt="Move-In Move-Out">
+        <h3>Move-In / Move-Out</h3>
+        <p>Complete cleaning so your space is spotless and ready for the next chapter.</p>
+      </div>
+
+      <div class="card" id="commercial">
+        <img src="images/commercial.jpg" alt="Commercial Cleaning">
+        <h3>Commercial Cleaning</h3>
+        <p>Cleaning for offices and commercial spaces to keep your workplace spotless.</p>
+      </div>
+
+      <div class="card" id="airbnb">
+        <img src="images/airbnb.jpg" alt="Airbnb Cleaning">
+        <h3>Airbnb Cleaning</h3>
+        <p>Keep your rental guest-ready and ensure great reviews.</p>
+      </div>
+
+      <div class="card" id="post">
+        <img src="images/postconstruction.jpg" alt="Post-Construction">
+        <h3>Post-Construction</h3>
+        <p>We remove dust and debris, leaving your property move-in ready.</p>
+      </div>
+
+    </div>
+  </main>
+
 </div>
 
-<div class="card">
-<img src="images/deep-cleaning.jpg">
-<h3>Deep Cleaning - Restaurants</h3>
-<p>We remove grease from ovens, hoods, and surfaces, leaving your kitchen spotless and inspection-ready.</p>
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <a href="index.html" class="nav-button">← Home</a>
+  <a href="process.html" class="nav-button next">Process →</a>
 </div>
-
-<div class="card">
-<img src="images/move.jpg">
-<h3>Move-In / Move-Out</h3>
-<p>Complete cleaning so your space is spotless and ready for the next chapter.</p>
-</div>
-
-<div class="card">
-<img src="images/commercial.jpg">
-<h3>Commercial Cleaning</h3>
-<p>Cleaning for offices and commercial spaces to keep your workplace spotless.</p>
-</div>
-
-<div class="card">
-<img src="images/airbnb.jpg">
-<h3>Airbnb Cleaning</h3>
-<p>Keep your rental guest-ready and ensure great reviews.</p>
-</div>
-
-<div class="card">
-<img src="images/postconstruction.jpg">
-<h3>Post-Construction</h3>
-<p>We remove dust and debris, leaving your property move-in ready.</p>
-</div>
-
-</div>
-</section>
 
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">WhatsApp</a>

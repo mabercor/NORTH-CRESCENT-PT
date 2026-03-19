@@ -33,6 +33,9 @@ header {
   align-items: center;
   padding: 20px 40px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header img { height: 60px; }
@@ -46,21 +49,94 @@ nav a {
 
 nav a:hover { color: var(--accent); }
 
-/* TITLE */
-h1 {
-  text-align: center;
-  margin: 50px 0 20px;
-  color: var(--primary);
+nav .cta {
+  background: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
+/* PAGE LAYOUT */
+.page-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 300px 1fr;
   gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.sidebar {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 12px;
+}
+
+.sidebar a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.sidebar-cta {
+  display: block;
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.sidebar-cta:hover {
+  background: var(--primary);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  background: white;
   padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.main-content h2 {
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
 /* FORM */
@@ -73,7 +149,14 @@ input, select, textarea {
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 textarea {
@@ -89,27 +172,41 @@ button {
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s;
 }
 
 button:hover {
   background: var(--primary);
 }
 
-/* INFO BOX */
-.info {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
+  gap: 20px;
 }
 
-.info h3 {
-  margin-bottom: 15px;
-  color: var(--primary);
+.nav-button {
+  display: inline-block;
+  padding: 15px 25px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.info p {
-  margin-bottom: 10px;
+.nav-button:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 /* FLOAT BUTTON */
@@ -149,10 +246,27 @@ footer {
   padding: 30px;
 }
 
-/* RESPONSIVE */
-@media(max-width: 768px) {
-  .container {
+@media(max-width: 1024px) {
+  .page-container {
     grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .nav-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
   }
 }
 </style>
@@ -160,7 +274,6 @@ footer {
 
 <body>
 
-<header>
 <header>
   <img src="images/logo.png" alt="North Crescent Facility Solutions Logo">
 
@@ -175,60 +288,89 @@ footer {
   </nav>
 </header>
 
-<h1>Request Your Free Quote</h1>
+<!-- PAGE LAYOUT -->
+<div class="page-container">
 
-<div class="container">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
 
-<!-- FORM -->
-<form action="https://formspree.io/f/xvzwvbed" method="POST">
+    <div class="sidebar-section">
+      <h3>Contact Information</h3>
+      <ul>
+        <li>📞 +1 (428) 888-0542</li>
+        <li>📧 northcrescent@email.com</li>
+        <li>📍 Moncton, New Brunswick</li>
+      </ul>
+    </div>
 
-<input type="text" name="name" placeholder="Full Name" required>
+    <div class="sidebar-section">
+      <h3>Business Hours</h3>
+      <ul>
+        <li>Mon–Fri: 8am – 6pm</li>
+        <li>Saturday: 9am – 4pm</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </div>
 
-<input type="email" name="email" placeholder="Email Address" required>
+    <div class="sidebar-section">
+      <h3>Service Area</h3>
+      <ul>
+        <li>📌 Moncton</li>
+        <li>📌 Dieppe</li>
+        <li>📌 Riverview</li>
+        <li>📌 Greater Moncton Area</li>
+      </ul>
+    </div>
 
-<input type="tel" name="phone" placeholder="Phone Number">
+    <div class="sidebar-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="services.html">→ Our Services</a></li>
+        <li><a href="process.html">→ Our Process</a></li>
+        <li><a href="reviews.html">→ Client Reviews</a></li>
+      </ul>
+    </div>
 
-<select name="service" required>
-<option value="">Select a Service</option>
-<option>Residential Cleaning</option>
-<option>Deep Cleaning</option>
-<option>Move-In / Move-Out</option>
-<option>Commercial Cleaning</option>
-<option>Airbnb Cleaning</option>
-<option>Post-Construction</option>
-</select>
+    <a class="sidebar-cta" href="https://wa.me/14288880542">WhatsApp Us →</a>
 
-<input type="text" name="location" placeholder="City / Location">
+  </aside>
 
-<textarea name="message" placeholder="Tell us about your cleaning needs..."></textarea>
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h2>Request Your Free Quote</h2>
 
-<button type="submit">Get a Free Quote</button>
+    <form action="https://formspree.io/f/xvzwvbed" method="POST">
 
-</form>
+      <input type="text" name="name" placeholder="Full Name" required>
 
-<!-- INFO -->
-<div class="info">
-<h3>Contact Information</h3>
-<p><strong>Phone:</strong> +1 (428) 888-0542</p>
-<p><strong>Email:</strong> northcrescent@email.com</p>
-<p><strong>Location:</strong> Moncton, New Brunswick</p>
+      <input type="email" name="email" placeholder="Email Address" required>
 
-<br>
+      <input type="tel" name="phone" placeholder="Phone Number">
 
-<h3>Business Hours</h3>
-<p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-<p>Saturday: 9:00 AM - 4:00 PM</p>
-<p>Sunday: Closed</p>
+      <select name="service" required>
+        <option value="">Select a Service</option>
+        <option>Residential Cleaning</option>
+        <option>Deep Cleaning</option>
+        <option>Move-In / Move-Out</option>
+        <option>Commercial Cleaning</option>
+        <option>Airbnb Cleaning</option>
+        <option>Post-Construction</option>
+      </select>
 
-<br>
+      <input type="text" name="location" placeholder="City / Location">
 
-<h3>Why Choose Us?</h3>
-<p>✔ Reliable & Professional</p>
-<p>✔ Attention to Detail</p>
-<p>✔ Flexible Scheduling</p>
-<p>✔ 100% Satisfaction Focus</p>
+      <textarea name="message" placeholder="Tell us about your cleaning needs..."></textarea>
+
+      <button type="submit">Get a Free Quote</button>
+
+    </form>
+  </main>
+
 </div>
 
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <a href="reviews.html" class="nav-button">← Reviews</a>
 </div>
 
 <a class="quote-float" href="contact.html">Get a Free Quote</a>

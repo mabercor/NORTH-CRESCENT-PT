@@ -33,6 +33,9 @@ header {
   align-items: center;
   padding: 20px 40px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header img { height: 60px; }
@@ -69,38 +72,170 @@ nav .cta {
   font-size: 2.5rem;
 }
 
-/* SECTION */
-section { padding: 60px 40px; }
+/* PAGE LAYOUT */
+.page-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
 
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
+.sidebar {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar h3 {
   color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 12px;
+}
+
+.sidebar a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.timeline-number {
+  background: var(--accent);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.timeline-text {
+  font-size: 0.9rem;
+  color: #555;
+  padding-top: 4px;
+}
+
+.sidebar-cta {
+  display: block;
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.sidebar-cta:hover {
+  background: var(--primary);
+}
+
+.main-content {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.main-content h2 {
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
 /* PROCESS STEPS */
-.process {
-  max-width: 900px;
-  margin: auto;
-}
-
 .step {
-  background: white;
+  background: var(--light);
   padding: 25px;
   border-radius: 15px;
   margin-bottom: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
   transition: 0.3s;
+  border-left: 4px solid var(--accent);
 }
 
 .step:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .step h3 {
   color: var(--primary);
   margin-bottom: 10px;
 }
+
+.step p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
+  gap: 20px;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 15px 25px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.nav-button.next { margin-left: auto; }
 
 /* FLOAT BUTTON */
 .quote-float {
@@ -138,6 +273,31 @@ footer {
   text-align: center;
   padding: 30px;
 }
+
+@media(max-width: 1024px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .nav-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0 !important;
+  }
+}
 </style>
 </head>
 
@@ -162,39 +322,99 @@ footer {
 <h1>Our Cleaning Process</h1>
 </section>
 
-<!-- PROCESS -->
-<section>
-<h2>How We Work</h2>
+<!-- PAGE LAYOUT -->
+<div class="page-container">
 
-<div class="process">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
 
-<div class="step">
-<h3>1. Request & Consultation</h3>
-<p>Contact us and tell us about your cleaning needs. We assess your space and recommend the best service.</p>
+    <div class="sidebar-section">
+      <h3>Process Overview</h3>
+      <div class="timeline-step">
+        <div class="timeline-number">1</div>
+        <div class="timeline-text">Request &amp; Consultation</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-number">2</div>
+        <div class="timeline-text">Customized Plan</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-number">3</div>
+        <div class="timeline-text">Professional Cleaning</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-number">4</div>
+        <div class="timeline-text">Quality Check</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-number">5</div>
+        <div class="timeline-text">Client Satisfaction</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Expected Duration</h3>
+      <ul>
+        <li>🏠 Residential: 2–4 hrs</li>
+        <li>🏢 Commercial: 3–6 hrs</li>
+        <li>🔥 Deep Clean: 4–8 hrs</li>
+        <li>📦 Move-Out: 3–5 hrs</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Benefits</h3>
+      <ul>
+        <li>✅ Trained Professionals</li>
+        <li>✅ Eco-Friendly Products</li>
+        <li>✅ Flexible Scheduling</li>
+        <li>✅ Satisfaction Guarantee</li>
+        <li>✅ Fully Insured</li>
+      </ul>
+    </div>
+
+    <a class="sidebar-cta" href="contact.html">Book Now →</a>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h2>How We Work</h2>
+
+    <div class="step">
+      <h3>1. Request &amp; Consultation</h3>
+      <p>Contact us and tell us about your cleaning needs. We assess your space and recommend the best service tailored to your situation.</p>
+    </div>
+
+    <div class="step">
+      <h3>2. Customized Plan</h3>
+      <p>We create a cleaning plan tailored to your property, schedule, and specific requirements — ensuring every detail is covered.</p>
+    </div>
+
+    <div class="step">
+      <h3>3. Professional Cleaning</h3>
+      <p>Our trained team arrives on time and performs detailed, high-quality cleaning using professional methods and eco-friendly products.</p>
+    </div>
+
+    <div class="step">
+      <h3>4. Quality Check</h3>
+      <p>We inspect every area to ensure everything meets our high standards before leaving. Nothing is overlooked.</p>
+    </div>
+
+    <div class="step">
+      <h3>5. Client Satisfaction</h3>
+      <p>We make sure you are fully satisfied and your space looks spotless, fresh, and ready. Your happiness is our priority.</p>
+    </div>
+
+  </main>
+
 </div>
 
-<div class="step">
-<h3>2. Customized Plan</h3>
-<p>We create a cleaning plan tailored to your property, schedule, and specific requirements.</p>
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <a href="services.html" class="nav-button">← Services</a>
+  <a href="work.html" class="nav-button next">Our Work →</a>
 </div>
-
-<div class="step">
-<h3>3. Professional Cleaning</h3>
-<p>Our trained team arrives on time and performs detailed, high-quality cleaning using professional methods.</p>
-</div>
-
-<div class="step">
-<h3>4. Quality Check</h3>
-<p>We inspect every area to ensure everything meets our high standards.</p>
-</div>
-
-<div class="step">
-<h3>5. Client Satisfaction</h3>
-<p>We make sure you are fully satisfied and your space looks spotless, fresh, and ready.</p>
-</div>
-
-</div>
-</section>
 
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">WhatsApp</a>

@@ -17,51 +17,242 @@
   --dark: #0F172A;
 }
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--light);
-  margin: 0;
+  color: var(--dark);
 }
 
+/* HEADER */
 header {
+  background: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 40px;
-  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
+
+header img { height: 60px; }
 
 nav a {
   margin-left: 20px;
   text-decoration: none;
   color: var(--primary);
+  font-weight: 500;
 }
 
-h1 {
-  text-align: center;
-  margin: 40px;
-  color: var(--primary);
+nav a:hover { color: var(--accent); }
+
+nav .cta {
+  background: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
 }
 
-.reviews {
+/* PAGE LAYOUT */
+.page-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.sidebar {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 12px;
+}
+
+.sidebar a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.rating-summary {
+  text-align: center;
+  padding: 15px;
+  background: var(--light);
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.rating-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.rating-stars {
+  color: #FFD700;
+  font-size: 1.4rem;
+  margin: 5px 0;
+}
+
+.rating-count {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.stat-box {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-box .stat-label {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.stat-box .stat-value {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.sidebar-cta {
+  display: block;
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.sidebar-cta:hover {
+  background: var(--primary);
+}
+
+.main-content {
+  background: white;
   padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.main-content h2 {
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+/* REVIEW CARDS */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
 .review-card {
-  background: white;
+  background: var(--light);
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
   text-align: center;
+  transition: 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .stars {
   color: #FFD700;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
 }
 
+.review-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.review-card strong {
+  color: var(--primary);
+}
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
+  gap: 20px;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 15px 25px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.nav-button.next { margin-left: auto; }
+
+/* FLOAT BUTTON */
 .quote-float {
   position: fixed;
   bottom: 90px;
@@ -71,6 +262,56 @@ h1 {
   padding: 15px 20px;
   border-radius: 50px;
   text-decoration: none;
+  font-weight: 600;
+}
+
+.quote-float:hover {
+  background: var(--primary);
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+@media(max-width: 1024px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .nav-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0 !important;
+  }
 }
 </style>
 </head>
@@ -90,31 +331,87 @@ h1 {
     <a href="contact.html" class="cta">Contact Us</a>
   </nav>
 </header>
-<h1>Client Reviews</h1>
 
-<div class="reviews">
+<!-- PAGE LAYOUT -->
+<div class="page-container">
 
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p>"Excellent service! My house has never been this clean."</p>
-<strong>- Sarah M.</strong>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <h3>Rating Summary</h3>
+      <div class="rating-summary">
+        <div class="rating-number">5.0</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">Based on 50+ reviews</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">5 Stars</span>
+        <span class="stat-value">96%</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">4 Stars</span>
+        <span class="stat-value">4%</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Review Stats</h3>
+      <div class="stat-box">
+        <span class="stat-label">Total Reviews</span>
+        <span class="stat-value">50+</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Repeat Clients</span>
+        <span class="stat-value">85%</span>
+      </div>
+    </div>
+
+    <a class="sidebar-cta" href="contact.html">Add Your Review →</a>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h2>Client Reviews</h2>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Excellent service! My house has never been this clean. The team was professional and thorough."</p>
+        <strong>- Sarah M.</strong>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Very professional and reliable. They showed up on time and left everything spotless. Highly recommended."</p>
+        <strong>- John D.</strong>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Amazing attention to detail. They cleaned areas I didn't even think of. Will definitely hire again!"</p>
+        <strong>- Emily R.</strong>
+      </div>
+
+    </div>
+  </main>
+
 </div>
 
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p>"Very professional and reliable. Highly recommended."</p>
-<strong>- John D.</strong>
-</div>
-
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p>"Amazing attention to detail. Will hire again!"</p>
-<strong>- Emily R.</strong>
-</div>
-
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <a href="gallery.html" class="nav-button">← Gallery</a>
+  <a href="contact.html" class="nav-button next">Contact →</a>
 </div>
 
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="whatsapp" href="https://wa.me/14288880542">WhatsApp</a>
+
+<footer>
+<p>© 2026 North Crescent Facility Solutions Inc</p>
+</footer>
 
 </body>
 </html>

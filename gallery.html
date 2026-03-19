@@ -33,6 +33,9 @@ header {
   align-items: center;
   padding: 20px 40px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header img { height: 60px; }
@@ -68,18 +71,101 @@ nav .cta {
   font-size: 2.5rem;
 }
 
-/* GALLERY */
-section { padding: 60px 40px; }
-
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  color: var(--primary);
+/* PAGE LAYOUT */
+.page-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
 }
 
+.sidebar {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 12px;
+}
+
+.sidebar a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.update-item {
+  background: var(--light);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.sidebar-cta {
+  display: block;
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.sidebar-cta:hover {
+  background: var(--primary);
+}
+
+.main-content {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.main-content h2 {
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+/* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
@@ -99,6 +185,36 @@ h2 {
 .gallery-item:hover img {
   transform: scale(1.1);
 }
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
+  gap: 20px;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 15px 25px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.nav-button.next { margin-left: auto; }
 
 /* FLOAT BUTTON */
 .quote-float {
@@ -136,6 +252,31 @@ footer {
   text-align: center;
   padding: 30px;
 }
+
+@media(max-width: 1024px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .nav-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0 !important;
+  }
+}
 </style>
 </head>
 
@@ -160,38 +301,74 @@ footer {
 <h1>Our Cleaning Work Gallery</h1>
 </section>
 
-<!-- GALLERY -->
-<section>
-<h2>See Our Results</h2>
+<!-- PAGE LAYOUT -->
+<div class="page-container">
 
-<div class="gallery">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
 
-<div class="gallery-item">
-<img src="images/gallery1.jpg" alt="Cleaning work 1">
+    <div class="sidebar-section">
+      <h3>Gallery Categories</h3>
+      <ul>
+        <li>🏠 <a href="#all">All Projects</a></li>
+        <li>🏢 <a href="#all">Commercial</a></li>
+        <li>🏡 <a href="#all">Residential</a></li>
+        <li>🏗️ <a href="#all">Post-Construction</a></li>
+        <li>🛏️ <a href="#all">Airbnb / Short-Term</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Latest Updates</h3>
+      <div class="update-item">📸 New project photos added – March 2026</div>
+      <div class="update-item">🏆 Featured: Commercial deep clean – Feb 2026</div>
+      <div class="update-item">✨ Post-construction series – Jan 2026</div>
+    </div>
+
+    <a class="sidebar-cta" href="contact.html">Book a Service →</a>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h2 id="all">See Our Results</h2>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <img src="images/gallery1.jpg" alt="Cleaning work 1">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery2.jpg" alt="Cleaning work 2">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery3.jpg" alt="Cleaning work 3">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery4.jpg" alt="Cleaning work 4">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery5.jpg" alt="Cleaning work 5">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery6.jpg" alt="Cleaning work 6">
+      </div>
+
+    </div>
+  </main>
+
 </div>
 
-<div class="gallery-item">
-<img src="images/gallery2.jpg" alt="Cleaning work 2">
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <a href="work.html" class="nav-button">← Our Work</a>
+  <a href="reviews.html" class="nav-button next">Reviews →</a>
 </div>
-
-<div class="gallery-item">
-<img src="images/gallery3.jpg" alt="Cleaning work 3">
-</div>
-
-<div class="gallery-item">
-<img src="images/gallery4.jpg" alt="Cleaning work 4">
-</div>
-
-<div class="gallery-item">
-<img src="images/gallery5.jpg" alt="Cleaning work 5">
-</div>
-
-<div class="gallery-item">
-<img src="images/gallery6.jpg" alt="Cleaning work 6">
-</div>
-
-</div>
-</section>
 
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">WhatsApp</a>

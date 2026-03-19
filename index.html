@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Professional Facility Cleaning| NORTH CRESCENT FACILITY SOLUTIONS INC</title>
+  <title>Professional Facility Cleaning | NORTH CRESCENT FACILITY SOLUTIONS INC</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -86,41 +86,166 @@
       border-radius: 12px;
     }
 
-    /* QUICK LINKS */
-    .quick-links {
-      padding: 60px 40px;
-      text-align: center;
-    }
-
-    .quick-links h2 {
-      margin-bottom: 30px;
-      color: var(--primary);
-    }
-
-    .links {
+    /* PAGE LAYOUT */
+    .page-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: auto;
+      grid-template-columns: 300px 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 40px;
     }
 
-    .link-card {
+    .sidebar {
       background: white;
       padding: 30px;
       border-radius: 15px;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 600;
       box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+
+    .sidebar h3 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 10px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 12px;
+    }
+
+    .sidebar a {
+      color: var(--primary);
+      text-decoration: none;
       transition: 0.3s;
     }
 
-    .link-card:hover {
-      transform: translateY(-5px);
+    .sidebar a:hover {
+      color: var(--accent);
+      padding-left: 5px;
+    }
+
+    .sidebar-section {
+      margin-bottom: 30px;
+    }
+
+    .stat-box {
+      background: var(--light);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .stat-box .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-box .stat-label {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .sidebar-cta {
+      display: block;
       background: var(--accent);
       color: white;
+      text-align: center;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: 0.3s;
     }
+
+    .sidebar-cta:hover {
+      background: var(--primary);
+    }
+
+    .main-content {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .main-content h2 {
+      color: var(--primary);
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .feature-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 25px;
+      border-left: 4px solid var(--accent);
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .feature-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* NAV BUTTONS */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 40px;
+      gap: 20px;
+    }
+
+    .nav-button {
+      display: inline-block;
+      padding: 15px 25px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .nav-button.next { margin-left: auto; }
 
     /* FLOAT BUTTON */
     .quote-float {
@@ -157,18 +282,43 @@
       text-align: center;
       padding: 30px;
     }
+
+    @media(max-width: 1024px) {
+      .page-container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .nav-buttons {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+      }
+
+      .nav-button {
+        width: 100%;
+        text-align: center;
+        margin-left: 0 !important;
+      }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <img src="images/logo.png">
+  <img src="images/logo.png" alt="North Crescent Facility Solutions Logo">
 
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-     <a href="process.html">Process</a>
+    <a href="process.html">Process</a>
     <a href="reviews.html">Reviews</a>
     <a href="work.html">Our Work</a>
     <a href="gallery.html">Gallery</a>
@@ -179,7 +329,7 @@
 <!-- HERO -->
 <section class="hero">
   <div>
-    <h1>Professional Cleaning Services </h1>
+    <h1>Professional Cleaning Services</h1>
     <p class="hero-sub">Reliable • Detailed • Trusted</p>
     <p class="hero-highlight">
       Reliable service with attention to detail and consistently spotless results,
@@ -188,21 +338,88 @@
   </div>
 </section>
 
-<!-- QUICK NAVIGATION -->
-<section class="quick-links">
-  <h2>Explore Our Services</h2>
+<!-- PAGE LAYOUT -->
+<div class="page-container">
 
-  <div class="links">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
 
-    <a href="services.html" class="link-card">Our Services</a>
-    <a href="process.html" class="link-card">Our Process</a>
-    <a href="reviews.html" class="link-card">Client Reviews</a>
-    <a href="work.html" class="link-card">Our Work</a>
-    <a href="gallery.html" class="link-card">Gallery</a>
-    <a href="contact.html" class="link-card">Get a Quote</a>
+    <div class="sidebar-section">
+      <h3>Quick Stats</h3>
+      <div class="stat-box">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Service Types</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">5★</div>
+        <div class="stat-label">Average Rating</div>
+      </div>
+    </div>
 
-  </div>
-</section>
+    <div class="sidebar-section">
+      <h3>Company Overview</h3>
+      <ul>
+        <li>📍 Moncton, New Brunswick</li>
+        <li>📞 +1 (428) 888-0542</li>
+        <li>✅ Fully Insured</li>
+        <li>🕐 Mon–Sat Available</li>
+        <li>🌿 Eco-Friendly Products</li>
+      </ul>
+    </div>
+
+    <a class="sidebar-cta" href="contact.html">Get a Free Quote →</a>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h2>Why Choose North Crescent?</h2>
+
+    <div class="cards-grid">
+
+      <div class="feature-card">
+        <h3>✨ Professional Team</h3>
+        <p>Our trained and experienced cleaners deliver spotless results every single visit.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🏠 Residential Cleaning</h3>
+        <p>Complete home cleaning services tailored to your schedule and specific needs.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🏢 Commercial Cleaning</h3>
+        <p>Keep your workplace clean, professional, and welcoming for clients and staff.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🔍 Attention to Detail</h3>
+        <p>We don't cut corners. Every area is thoroughly cleaned to meet our high standards.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>📅 Flexible Scheduling</h3>
+        <p>Book at your convenience — one-time, weekly, bi-weekly, or monthly cleanings.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>💯 Satisfaction Guarantee</h3>
+        <p>Not happy with the result? We come back and make it right, at no extra cost.</p>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <a href="services.html" class="nav-button next">Services →</a>
+</div>
 
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">WhatsApp</a>
