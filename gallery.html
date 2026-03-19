@@ -7,10 +7,7 @@
 <title>Our Work Gallery | North Crescent Facility Solutions</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- CSS GLOBAL -->
 <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
@@ -30,7 +27,7 @@
       <a href="services.html">Services</a>
       <a href="process.html">Process</a>
       <a href="reviews.html">Reviews</a>
-      <a href="work.html">Our Work</a>
+      <a href="work.html" class="active">Our Work</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html" class="cta">Contact</a>
     </nav>
@@ -38,46 +35,108 @@
   </div>
 </header>
 
-<section class="hero-small">
-  <div class="container">
-    <h1>Our Cleaning Work Gallery</h1>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="badge">Our Work</div>
+
+    <h1>See the Quality We Deliver</h1>
+
+    <p class="hero-sub">
+      Real results from real cleaning projects
+    </p>
+
+    <div class="divider"></div>
+
   </div>
 </section>
 
+<!-- GALLERY -->
 <section>
   <div class="container">
-    <h2>See Our Results</h2>
 
-    <div class="gallery">
+    <div class="section-box">
 
-      <div class="gallery-item">
-        <img src="images/gallery1.jpg" alt="Cleaning work 1">
-      </div>
+      <h2 class="section-title">Our Cleaning Results</h2>
+      <div class="divider"></div>
 
-      <div class="gallery-item">
-        <img src="images/gallery2.jpg" alt="Cleaning work 2">
-      </div>
+      <p class="text-box">
+        Take a look at our recent work. We focus on detail, consistency, and delivering spotless results every time.
+      </p>
 
-      <div class="gallery-item">
-        <img src="images/gallery3.jpg" alt="Cleaning work 3">
-      </div>
+      <div class="grid grid-3">
 
-      <div class="gallery-item">
-        <img src="images/gallery4.jpg" alt="Cleaning work 4">
-      </div>
+        <!-- ITEM -->
+        <div class="card">
+          <div class="badge">Before / After</div>
+          <div class="image-frame">
+            <img src="images/gallery1.jpg" alt="Cleaning work 1">
+          </div>
+        </div>
 
-      <div class="gallery-item">
-        <img src="images/gallery5.jpg" alt="Cleaning work 5">
-      </div>
+        <div class="card">
+          <div class="badge">Residential</div>
+          <div class="image-frame">
+            <img src="images/gallery2.jpg" alt="Cleaning work 2">
+          </div>
+        </div>
 
-      <div class="gallery-item">
-        <img src="images/gallery6.jpg" alt="Cleaning work 6">
+        <div class="card">
+          <div class="badge">Deep Cleaning</div>
+          <div class="image-frame">
+            <img src="images/gallery3.jpg" alt="Cleaning work 3">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="badge">Commercial</div>
+          <div class="image-frame">
+            <img src="images/gallery4.jpg" alt="Cleaning work 4">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="badge">Move-Out</div>
+          <div class="image-frame">
+            <img src="images/gallery5.jpg" alt="Cleaning work 5">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="badge">Detailed Finish</div>
+          <div class="image-frame">
+            <img src="images/gallery6.jpg" alt="Cleaning work 6">
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
+<!-- CTA -->
+<section>
+  <div class="container">
+
+    <div class="section-box" style="text-align:center;">
+
+      <h2>Want Results Like These?</h2>
+      <div class="divider"></div>
+
+      <p class="text-box">
+        Get a professional cleaning service you can trust. Fast quotes and reliable results.
+      </p>
+
+      <a href="contact.html" class="btn btn-primary">Request a Free Quote</a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FLOAT -->
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
@@ -99,18 +158,7 @@ function applyLanguage() {
     document.querySelectorAll('nav a')[6].innerText = 'Contact';
 
     document.querySelector('.quote-float').innerText = 'Obtenir un devis';
-    document.querySelector('.hero-small h1').innerText = 'Galerie de nos travaux';
-    document.querySelector('h2').innerText = 'Voir nos résultats';
-
   } else {
-    document.querySelectorAll('nav a')[0].innerText = 'Home';
-    document.querySelectorAll('nav a')[1].innerText = 'Services';
-    document.querySelectorAll('nav a')[2].innerText = 'Process';
-    document.querySelectorAll('nav a')[3].innerText = 'Reviews';
-    document.querySelectorAll('nav a')[4].innerText = 'Our Work';
-    document.querySelectorAll('nav a')[5].innerText = 'Gallery';
-    document.querySelectorAll('nav a')[6].innerText = 'Contact';
-
     document.querySelector('.quote-float').innerText = 'Get a Free Quote';
   }
 }
