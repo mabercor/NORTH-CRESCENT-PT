@@ -23,15 +23,23 @@
       </div>
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="reviews.html" class="active">Reviews</a>
-      <a href="work.html">Our Work</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="cta">Contact</a>
-    </nav>
+    <!-- NAV + LANG -->
+    <div class="nav-wrapper">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="reviews.html" class="active">Reviews</a>
+        <a href="work.html">Our Work</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+      </div>
+    </div>
 
   </div>
 </header>
@@ -40,11 +48,11 @@
 <section class="hero">
   <div class="container hero-content">
 
-    <div class="badge">Client Reviews</div>
+    <div class="badge" id="badge-reviews">Client Reviews</div>
 
-    <h1>What Our Clients Say</h1>
+    <h1 id="hero-title">What Our Clients Say</h1>
 
-    <p class="hero-sub">
+    <p class="hero-sub" id="hero-sub">
       Trusted by homeowners and businesses
     </p>
 
@@ -59,65 +67,49 @@
 
     <div class="section-box">
 
-      <h2 class="section-title">Real Client Feedback</h2>
+      <h2 class="section-title" id="section-title">Real Client Feedback</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="section-text">
         We take pride in delivering high-quality cleaning services. Here’s what our clients say about their experience.
       </p>
 
       <div class="grid grid-3">
 
-        <!-- REVIEW 1 -->
         <div class="card">
           <div class="badge">★★★★★</div>
-          <p id="rev1">
-            "Excellent service! My house has never been this clean."
-          </p>
+          <p id="rev1">"Excellent service! My house has never been this clean."</p>
           <strong>- Sarah M.</strong>
         </div>
 
-        <!-- REVIEW 2 -->
         <div class="card">
           <div class="badge">★★★★★</div>
-          <p id="rev2">
-            "Very professional and reliable. Highly recommended."
-          </p>
+          <p id="rev2">"Very professional and reliable. Highly recommended."</p>
           <strong>- John D.</strong>
         </div>
 
-        <!-- REVIEW 3 -->
         <div class="card">
           <div class="badge">★★★★★</div>
-          <p id="rev3">
-            "Amazing attention to detail. Everything looks spotless every time."
-          </p>
+          <p id="rev3">"Amazing attention to detail. Everything looks spotless every time."</p>
           <strong>- Emily R.</strong>
         </div>
 
-        <!-- EXTRA REVIEW -->
         <div class="card">
           <div class="badge">★★★★★</div>
-          <p>
-            "Great communication and outstanding results. Will definitely book again."
-          </p>
+          <p id="rev4">"Great communication and outstanding results. Will definitely book again."</p>
           <strong>- Michael T.</strong>
         </div>
 
-        <!-- EXTRA REVIEW -->
         <div class="card">
           <div class="badge">★★★★★</div>
-          <p>
-            "Reliable and efficient service. Highly satisfied with the quality."
-          </p>
+          <p id="rev5">"Reliable and efficient service. Highly satisfied with the quality."</p>
           <strong>- Laura K.</strong>
         </div>
 
-        <!-- TRUST CARD -->
         <div class="card">
-          <div class="badge">Trusted</div>
-          <h3>Consistent Quality</h3>
-          <p>
+          <div class="badge" id="trust-badge">Trusted</div>
+          <h3 id="trust-title">Consistent Quality</h3>
+          <p id="trust-text">
             We focus on delivering reliable, detailed, and professional cleaning services every time.
           </p>
         </div>
@@ -135,14 +127,14 @@
 
     <div class="section-box" style="text-align:center;">
 
-      <h2>Ready to Experience Our Service?</h2>
+      <h2 id="cta-title">Ready to Experience Our Service?</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="cta-text">
         Join our satisfied clients and get a professional cleaning service you can trust.
       </p>
 
-      <a href="contact.html" class="btn btn-primary">Request a Free Quote</a>
+      <a href="contact.html" class="btn btn-primary" id="cta-btn">Request a Free Quote</a>
 
     </div>
 
@@ -150,18 +142,25 @@
 </section>
 
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="quote-float" href="contact.html" id="float-btn">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
+<!-- 🌍 TRANSLATOR -->
 <script>
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
+}
+
 function applyLanguage() {
   const lang = localStorage.getItem('lang') || 'en';
 
   if (lang === 'fr') {
+
     document.querySelectorAll('nav a')[0].innerText = 'Accueil';
     document.querySelectorAll('nav a')[1].innerText = 'Services';
     document.querySelectorAll('nav a')[2].innerText = 'Processus';
@@ -170,17 +169,35 @@ function applyLanguage() {
     document.querySelectorAll('nav a')[5].innerText = 'Galerie';
     document.querySelectorAll('nav a')[6].innerText = 'Contact';
 
-    document.querySelector('.quote-float').innerText = 'Obtenir un devis';
+    document.getElementById('badge-reviews').innerText = 'Avis clients';
+    document.getElementById('hero-title').innerText = 'Ce que disent nos clients';
+    document.getElementById('hero-sub').innerText = 'Approuvé par particuliers et entreprises';
 
-    document.getElementById('rev1').innerText = "Service excellent ! Ma maison n’a jamais été aussi propre.";
-    document.getElementById('rev2').innerText = "Très professionnel et fiable. Fortement recommandé.";
-    document.getElementById('rev3').innerText = "Incroyable attention aux détails. Tout est impeccable.";
+    document.getElementById('section-title').innerText = 'Avis réels';
+    document.getElementById('section-text').innerText = 'Nous sommes fiers de fournir un service de qualité. Voici les avis de nos clients.';
+
+    document.getElementById('rev1').innerText = "Service excellent ! Maison impeccable.";
+    document.getElementById('rev2').innerText = "Très professionnel et fiable.";
+    document.getElementById('rev3').innerText = "Attention aux détails incroyable.";
+    document.getElementById('rev4').innerText = "Communication parfaite et résultats excellents.";
+    document.getElementById('rev5').innerText = "Service fiable et efficace.";
+
+    document.getElementById('trust-badge').innerText = 'Fiable';
+    document.getElementById('trust-title').innerText = 'Qualité constante';
+    document.getElementById('trust-text').innerText = 'Nous garantissons un service professionnel à chaque visite.';
+
+    document.getElementById('cta-title').innerText = 'Prêt à essayer notre service ?';
+    document.getElementById('cta-text').innerText = 'Rejoignez nos clients satisfaits dès aujourd’hui.';
+    document.getElementById('cta-btn').innerText = 'Demander un devis';
+
+    document.getElementById('float-btn').innerText = 'Devis';
+
   } else {
-    document.querySelector('.quote-float').innerText = 'Get a Free Quote';
+    location.reload();
   }
 }
 
-window.onload = applyLanguage;
+document.addEventListener('DOMContentLoaded', applyLanguage);
 </script>
 
 </body>
