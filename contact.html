@@ -11,45 +11,160 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    .success-message {
-      display: none;
-      margin-top: 10px;
-      color: #4A9B8C;
-      font-weight: bold;
-    }
 
-    .social-links a {
-      display: inline-block;
-      margin-right: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #1E3A5F;
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
 
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      z-index: 999;
+  /* HERO */
+  .page-hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(30,58,95,0.9), rgba(30,58,95,0.9)),
+                url('images/cleaning-bg.jpg') center/cover no-repeat;
+    color: white;
+  }
+
+  .page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+
+  /* SECTION */
+  .contact-section {
+    padding: 100px 20px;
+    background: #f4f7fa;
+  }
+
+  .contact-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  /* INFO */
+  .contact-info h2 {
+    color: #1E3A5F;
+    margin-bottom: 20px;
+  }
+
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .contact-info li {
+    margin-bottom: 10px;
+  }
+
+  /* SOCIAL */
+  .social-links {
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #4A9B8C;
+    font-weight: bold;
+  }
+
+  /* FORM */
+  .contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 15px;
+    background: #4A9B8C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .contact-form button:hover {
+    background: #3b8578;
+  }
+
+  .success-message {
+    display: none;
+    margin-top: 10px;
+    color: #4A9B8C;
+  }
+
+  /* CTA */
+  .cta {
+    text-align: center;
+    padding: 80px;
+    background: #1E3A5F;
+    color: white;
+  }
+
+  .cta .btn {
+    background: #4A9B8C;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #0d1f33;
+    color: white;
+  }
+
+  /* WHATSAPP */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .contact-container {
+      grid-template-columns: 1fr;
     }
+  }
+
   </style>
 
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <div class="logo">
-      <img src="images/logo.png" alt="North Crescent Facility Solutions Logo">
+      <img src="images/logo.png" alt="North Crescent Logo">
     </div>
 
     <nav>
@@ -63,45 +178,35 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="page-hero">
   <h1>Get Your Free Quote</h1>
   <p>Fast response. Professional service. No obligation.</p>
 </section>
 
-<!-- CONTACT -->
 <section class="contact-section">
   <div class="contact-container">
 
-    <!-- INFO -->
     <div class="contact-info">
       <h2>Let’s Talk</h2>
-      <p>Tell us what you need and our team will respond within 24 hours.</p>
+      <p>Tell us what you need and we’ll respond within 24 hours.</p>
 
       <ul>
         <li><strong>Location:</strong> Moncton, New Brunswick</li>
         <li><strong>Email:</strong> info@northcrescent.ca</li>
         <li><strong>Phone:</strong> <a href="tel:+14288880542">+1 428 888 0542</a></li>
-        <li><strong>Hours:</strong> Mon - Sat | 8:00 AM - 6:00 PM</li>
       </ul>
 
-      <!-- SOCIAL -->
       <div class="social-links">
         <a href="https://www.facebook.com/profile.php?id=61580557412140" target="_blank">Facebook</a>
         <a href="https://www.instagram.com/northcrescentcleaningsolutions/" target="_blank">Instagram</a>
       </div>
-
-      <p><strong>Tip:</strong> Providing details helps us give you a faster and more accurate quote.</p>
     </div>
 
-    <!-- FORM -->
     <div class="contact-form">
       <form id="contactForm" action="https://formspree.io/f/xvzwvbed" method="POST">
 
         <input type="text" name="name" placeholder="Full Name" required>
-
         <input type="email" name="email" placeholder="Email Address" required>
-
         <input type="tel" name="phone" placeholder="Phone Number">
 
         <select name="service" required>
@@ -119,7 +224,7 @@
         <button type="submit">Request a Free Quote</button>
 
         <div class="success-message" id="successMessage">
-          ✅ Your request has been sent! We’ll contact you shortly.
+          ✅ Message sent successfully!
         </div>
 
       </form>
@@ -128,23 +233,19 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <h2>Reliable. Professional. Detail-Oriented.</h2>
   <a href="services.html" class="btn">Explore Services</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 North Crescent Facility Solutions Ltd. All rights reserved.</p>
+  <p>© 2026 North Crescent Facility Solutions Ltd</p>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/14288880542" target="_blank" class="whatsapp-float">
   💬 Chat Now
 </a>
 
-<!-- SCRIPT -->
 <script>
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
