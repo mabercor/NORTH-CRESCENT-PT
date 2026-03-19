@@ -8,8 +8,7 @@
 <meta name="description" content="Get a fast quote for professional cleaning services in Moncton, NB.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-
+<link rel="stylesheet" href="styles.css?v=2">
 </head>
 
 <body>
@@ -37,19 +36,23 @@
   </div>
 </header>
 
+<!-- ✅ MAIN AGREGA ESTRUCTURA CORRECTA -->
+<main>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-content">
+  <div class="container hero-grid">
 
-    <div class="badge">Contact Us</div>
+    <div class="hero-text">
+      <h1>Get Your Free Quote</h1>
+      <p class="hero-sub">
+        Fast response. Professional service. Reliable results.
+      </p>
+    </div>
 
-    <h1>Get Your Free Quote</h1>
-
-    <p class="hero-sub">
-      Fast response. Professional service. Reliable results.
-    </p>
-
-    <div class="divider"></div>
+    <div class="hero-image">
+      <img src="images/hero.jpg" alt="Cleaning Service">
+    </div>
 
   </div>
 </section>
@@ -71,7 +74,7 @@
 
         <!-- INFO -->
         <div class="card">
-          <div class="badge">Contact Info</div>
+          <h3>Contact Info</h3>
 
           <p><strong>Location:</strong> Moncton, NB</p>
           <p><strong>Email:</strong> info@northcrescent.ca</p>
@@ -86,7 +89,7 @@
         <!-- FORM -->
         <div class="card">
 
-          <div class="badge">Request a Quote</div>
+          <h3>Request a Quote</h3>
 
           <form id="contactForm" action="https://formspree.io/f/xvzwvbed" method="POST">
 
@@ -106,9 +109,9 @@
 
             <textarea name="message" rows="4" placeholder="Describe your needs..." required></textarea>
 
-            <button type="submit" class="btn btn-primary">Request a Free Quote</button>
+            <button type="submit" class="btn">Request a Free Quote</button>
 
-            <div class="success-message" id="successMessage">
+            <div class="success-message" id="successMessage" style="display:none; margin-top:10px;">
               ✅ Message sent successfully!
             </div>
 
@@ -136,15 +139,17 @@
         Get professional cleaning with reliable results and attention to detail.
       </p>
 
-      <a href="tel:+14288880542" class="btn btn-primary">Call Now</a>
+      <a href="tel:+14288880542" class="btn">Call Now</a>
 
     </div>
 
   </div>
 </section>
 
+</main>
+
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="quote-float" href="contact.html">Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
 <footer>
