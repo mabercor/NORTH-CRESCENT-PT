@@ -22,15 +22,23 @@
       </div>
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="work.html" class="active">Our Work</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="cta">Contact</a>
-    </nav>
+    <!-- NAV + LANG -->
+    <div class="nav-wrapper">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="work.html" class="active">Our Work</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+      </div>
+    </div>
 
   </div>
 </header>
@@ -39,11 +47,11 @@
 <section class="hero">
   <div class="container hero-content">
 
-    <div class="badge">Our Work</div>
+    <div class="badge" id="badge-work">Our Work</div>
 
-    <h1>See the Quality We Deliver</h1>
+    <h1 id="hero-title">See the Quality We Deliver</h1>
 
-    <p class="hero-sub">
+    <p class="hero-sub" id="hero-sub">
       Real results from real cleaning projects
     </p>
 
@@ -58,55 +66,54 @@
 
     <div class="section-box">
 
-      <h2 class="section-title">Our Cleaning Results</h2>
+      <h2 class="section-title" id="section-title">Our Cleaning Results</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="section-text">
         Take a look at our recent work. We focus on detail, consistency, and delivering spotless results every time.
       </p>
 
       <div class="grid grid-3">
 
-        <!-- ITEM -->
         <div class="card">
-          <div class="badge">Before / After</div>
+          <div class="badge" id="b1">Before / After</div>
           <div class="image-frame">
-            <img src="images/gallery1.jpg" alt="Cleaning work 1">
+            <img src="images/gallery1.jpg" alt="">
           </div>
         </div>
 
         <div class="card">
-          <div class="badge">Residential</div>
+          <div class="badge" id="b2">Residential</div>
           <div class="image-frame">
-            <img src="images/gallery2.jpg" alt="Cleaning work 2">
+            <img src="images/gallery2.jpg" alt="">
           </div>
         </div>
 
         <div class="card">
-          <div class="badge">Deep Cleaning</div>
+          <div class="badge" id="b3">Deep Cleaning</div>
           <div class="image-frame">
-            <img src="images/gallery3.jpg" alt="Cleaning work 3">
+            <img src="images/gallery3.jpg" alt="">
           </div>
         </div>
 
         <div class="card">
-          <div class="badge">Commercial</div>
+          <div class="badge" id="b4">Commercial</div>
           <div class="image-frame">
-            <img src="images/gallery4.jpg" alt="Cleaning work 4">
+            <img src="images/gallery4.jpg" alt="">
           </div>
         </div>
 
         <div class="card">
-          <div class="badge">Move-Out</div>
+          <div class="badge" id="b5">Move-Out</div>
           <div class="image-frame">
-            <img src="images/gallery5.jpg" alt="Cleaning work 5">
+            <img src="images/gallery5.jpg" alt="">
           </div>
         </div>
 
         <div class="card">
-          <div class="badge">Detailed Finish</div>
+          <div class="badge" id="b6">Detailed Finish</div>
           <div class="image-frame">
-            <img src="images/gallery6.jpg" alt="Cleaning work 6">
+            <img src="images/gallery6.jpg" alt="">
           </div>
         </div>
 
@@ -122,14 +129,14 @@
 
     <div class="section-box" style="text-align:center;">
 
-      <h2>Want Results Like These?</h2>
+      <h2 id="cta-title">Want Results Like These?</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="cta-text">
         Get a professional cleaning service you can trust. Fast quotes and reliable results.
       </p>
 
-      <a href="contact.html" class="btn btn-primary">Request a Free Quote</a>
+      <a href="contact.html" class="btn btn-primary" id="cta-btn">Request a Free Quote</a>
 
     </div>
 
@@ -137,18 +144,25 @@
 </section>
 
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="quote-float" href="contact.html" id="float-btn">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
+<!-- 🌍 TRANSLATOR -->
 <script>
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
+}
+
 function applyLanguage() {
   const lang = localStorage.getItem('lang') || 'en';
 
   if (lang === 'fr') {
+
     document.querySelectorAll('nav a')[0].innerText = 'Accueil';
     document.querySelectorAll('nav a')[1].innerText = 'Services';
     document.querySelectorAll('nav a')[2].innerText = 'Processus';
@@ -157,13 +171,32 @@ function applyLanguage() {
     document.querySelectorAll('nav a')[5].innerText = 'Galerie';
     document.querySelectorAll('nav a')[6].innerText = 'Contact';
 
-    document.querySelector('.quote-float').innerText = 'Obtenir un devis';
+    document.getElementById('badge-work').innerText = 'Nos travaux';
+    document.getElementById('hero-title').innerText = 'Découvrez la qualité de notre travail';
+    document.getElementById('hero-sub').innerText = 'Des résultats réels pour des projets réels';
+
+    document.getElementById('section-title').innerText = 'Nos résultats de nettoyage';
+    document.getElementById('section-text').innerText = 'Découvrez nos travaux récents. Nous nous concentrons sur les détails et la qualité.';
+
+    document.getElementById('b1').innerText = 'Avant / Après';
+    document.getElementById('b2').innerText = 'Résidentiel';
+    document.getElementById('b3').innerText = 'Nettoyage en profondeur';
+    document.getElementById('b4').innerText = 'Commercial';
+    document.getElementById('b5').innerText = 'Déménagement';
+    document.getElementById('b6').innerText = 'Finition détaillée';
+
+    document.getElementById('cta-title').innerText = 'Vous voulez ces résultats ?';
+    document.getElementById('cta-text').innerText = 'Obtenez un service professionnel fiable avec des résultats rapides.';
+    document.getElementById('cta-btn').innerText = 'Demander un devis';
+
+    document.getElementById('float-btn').innerText = 'Devis';
+
   } else {
-    document.querySelector('.quote-float').innerText = 'Get a Free Quote';
+    location.reload();
   }
 }
 
-applyLanguage();
+document.addEventListener('DOMContentLoaded', applyLanguage);
 </script>
 
 </body>
