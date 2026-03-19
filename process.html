@@ -23,15 +23,23 @@
       </div>
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html" class="active">Process</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="work.html">Our Work</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="cta">Contact</a>
-    </nav>
+    <!-- NAV + LANG -->
+    <div class="nav-wrapper">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html" class="active">Process</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="work.html">Our Work</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+      </div>
+    </div>
 
   </div>
 </header>
@@ -40,11 +48,11 @@
 <section class="hero">
   <div class="container hero-content">
 
-    <div class="badge">Our Process</div>
+    <div class="badge" id="badge-process">Our Process</div>
 
-    <h1>How We Deliver Professional Results</h1>
+    <h1 id="hero-title">How We Deliver Professional Results</h1>
 
-    <p class="hero-sub">
+    <p class="hero-sub" id="hero-sub">
       Simple, structured, and focused on quality
     </p>
 
@@ -59,65 +67,59 @@
 
     <div class="section-box">
 
-      <h2 class="section-title">How We Work</h2>
+      <h2 class="section-title" id="section-title">How We Work</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="section-text">
         Our process is designed to ensure consistent quality, efficiency, and complete customer satisfaction.
       </p>
 
       <div class="grid grid-3">
 
-        <!-- STEP 1 -->
         <div class="card">
-          <div class="badge">Step 1</div>
-          <h3>Request & Consultation</h3>
-          <p>
+          <div class="badge" id="step1-badge">Step 1</div>
+          <h3 id="step1-title">Request & Consultation</h3>
+          <p id="step1-text">
             Contact us and tell us about your cleaning needs. We assess your space and recommend the best service.
           </p>
         </div>
 
-        <!-- STEP 2 -->
         <div class="card">
-          <div class="badge">Step 2</div>
-          <h3>Customized Plan</h3>
-          <p>
+          <div class="badge" id="step2-badge">Step 2</div>
+          <h3 id="step2-title">Customized Plan</h3>
+          <p id="step2-text">
             We create a cleaning plan tailored to your property, schedule, and specific requirements.
           </p>
         </div>
 
-        <!-- STEP 3 -->
         <div class="card">
-          <div class="badge">Step 3</div>
-          <h3>Professional Cleaning</h3>
-          <p>
+          <div class="badge" id="step3-badge">Step 3</div>
+          <h3 id="step3-title">Professional Cleaning</h3>
+          <p id="step3-text">
             Our trained team arrives on time and performs detailed, high-quality cleaning using professional methods.
           </p>
         </div>
 
-        <!-- STEP 4 -->
         <div class="card">
-          <div class="badge">Step 4</div>
-          <h3>Quality Check</h3>
-          <p>
+          <div class="badge" id="step4-badge">Step 4</div>
+          <h3 id="step4-title">Quality Check</h3>
+          <p id="step4-text">
             We inspect every area to ensure everything meets our high standards.
           </p>
         </div>
 
-        <!-- STEP 5 -->
         <div class="card">
-          <div class="badge">Step 5</div>
-          <h3>Client Satisfaction</h3>
-          <p>
+          <div class="badge" id="step5-badge">Step 5</div>
+          <h3 id="step5-title">Client Satisfaction</h3>
+          <p id="step5-text">
             We ensure you are fully satisfied and your space is spotless, fresh, and ready.
           </p>
         </div>
 
-        <!-- EXTRA VALUE -->
         <div class="card">
-          <div class="badge">Our Promise</div>
-          <h3>Consistent Quality</h3>
-          <p>
+          <div class="badge" id="promise-badge">Our Promise</div>
+          <h3 id="promise-title">Consistent Quality</h3>
+          <p id="promise-text">
             Every service is delivered with attention to detail and a commitment to excellence.
           </p>
         </div>
@@ -135,14 +137,14 @@
 
     <div class="section-box" style="text-align:center;">
 
-      <h2>Ready to Experience Our Process?</h2>
+      <h2 id="cta-title">Ready to Experience Our Process?</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="cta-text">
         Book your cleaning today and let our professional team take care of everything.
       </p>
 
-      <a href="contact.html" class="btn btn-primary">Request a Free Quote</a>
+      <a href="contact.html" class="btn btn-primary" id="cta-btn">Request a Free Quote</a>
 
     </div>
 
@@ -150,18 +152,25 @@
 </section>
 
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="quote-float" href="contact.html" id="float-btn">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
+<!-- 🌍 TRANSLATOR -->
 <script>
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
+}
+
 function applyLanguage() {
   const lang = localStorage.getItem('lang') || 'en';
 
   if (lang === 'fr') {
+
     document.querySelectorAll('nav a')[0].innerText = 'Accueil';
     document.querySelectorAll('nav a')[1].innerText = 'Services';
     document.querySelectorAll('nav a')[2].innerText = 'Processus';
@@ -170,13 +179,49 @@ function applyLanguage() {
     document.querySelectorAll('nav a')[5].innerText = 'Galerie';
     document.querySelectorAll('nav a')[6].innerText = 'Contact';
 
-    document.querySelector('.quote-float').innerText = 'Obtenir un devis';
+    document.getElementById('badge-process').innerText = 'Notre processus';
+    document.getElementById('hero-title').innerText = 'Comment nous livrons des résultats professionnels';
+    document.getElementById('hero-sub').innerText = 'Simple, structuré et axé sur la qualité';
+
+    document.getElementById('section-title').innerText = 'Comment nous travaillons';
+    document.getElementById('section-text').innerText = 'Notre processus garantit qualité, efficacité et satisfaction totale.';
+
+    document.getElementById('step1-badge').innerText = 'Étape 1';
+    document.getElementById('step1-title').innerText = 'Demande et consultation';
+    document.getElementById('step1-text').innerText = 'Contactez-nous et expliquez vos besoins. Nous analysons votre espace.';
+
+    document.getElementById('step2-badge').innerText = 'Étape 2';
+    document.getElementById('step2-title').innerText = 'Plan personnalisé';
+    document.getElementById('step2-text').innerText = 'Nous créons un plan adapté à votre propriété et vos besoins.';
+
+    document.getElementById('step3-badge').innerText = 'Étape 3';
+    document.getElementById('step3-title').innerText = 'Nettoyage professionnel';
+    document.getElementById('step3-text').innerText = 'Notre équipe réalise un nettoyage détaillé et de haute qualité.';
+
+    document.getElementById('step4-badge').innerText = 'Étape 4';
+    document.getElementById('step4-title').innerText = 'Contrôle qualité';
+    document.getElementById('step4-text').innerText = 'Nous vérifions chaque détail pour garantir nos standards.';
+
+    document.getElementById('step5-badge').innerText = 'Étape 5';
+    document.getElementById('step5-title').innerText = 'Satisfaction client';
+    document.getElementById('step5-text').innerText = 'Nous assurons votre satisfaction complète.';
+
+    document.getElementById('promise-badge').innerText = 'Notre promesse';
+    document.getElementById('promise-title').innerText = 'Qualité constante';
+    document.getElementById('promise-text').innerText = 'Chaque service est livré avec excellence et attention.';
+
+    document.getElementById('cta-title').innerText = 'Prêt à essayer notre processus ?';
+    document.getElementById('cta-text').innerText = 'Réservez dès aujourd’hui et laissez-nous nous occuper de tout.';
+    document.getElementById('cta-btn').innerText = 'Demander un devis';
+
+    document.getElementById('float-btn').innerText = 'Devis';
+
   } else {
-    document.querySelector('.quote-float').innerText = 'Get a Free Quote';
+    location.reload();
   }
 }
 
-window.onload = applyLanguage;
+document.addEventListener('DOMContentLoaded', applyLanguage);
 </script>
 
 </body>
