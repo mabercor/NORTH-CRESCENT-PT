@@ -7,8 +7,6 @@
 <title>Client Reviews | North Crescent Facility Solutions</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- CSS GLOBAL -->
 <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -29,7 +27,7 @@
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="process.html">Process</a>
-      <a href="reviews.html">Reviews</a>
+      <a href="reviews.html" class="active">Reviews</a>
       <a href="work.html">Our Work</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html" class="cta">Contact</a>
@@ -38,33 +36,92 @@
   </div>
 </header>
 
-<section class="hero-small">
-  <div class="container">
-    <h1>Client Reviews</h1>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="badge">Client Reviews</div>
+
+    <h1>What Our Clients Say</h1>
+
+    <p class="hero-sub">
+      Trusted by homeowners and businesses
+    </p>
+
+    <div class="divider"></div>
+
   </div>
 </section>
 
+<!-- REVIEWS -->
 <section>
   <div class="container">
 
-    <div class="reviews">
+    <div class="section-box">
 
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p id="rev1">"Excellent service! My house has never been this clean."</p>
-        <strong>- Sarah M.</strong>
-      </div>
+      <h2 class="section-title">Real Client Feedback</h2>
+      <div class="divider"></div>
 
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p id="rev2">"Very professional and reliable. Highly recommended."</p>
-        <strong>- John D.</strong>
-      </div>
+      <p class="text-box">
+        We take pride in delivering high-quality cleaning services. Here’s what our clients say about their experience.
+      </p>
 
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p id="rev3">"Amazing attention to detail. Everything looks spotless every time."</p>
-        <strong>- Emily R.</strong>
+      <div class="grid grid-3">
+
+        <!-- REVIEW 1 -->
+        <div class="card">
+          <div class="badge">★★★★★</div>
+          <p id="rev1">
+            "Excellent service! My house has never been this clean."
+          </p>
+          <strong>- Sarah M.</strong>
+        </div>
+
+        <!-- REVIEW 2 -->
+        <div class="card">
+          <div class="badge">★★★★★</div>
+          <p id="rev2">
+            "Very professional and reliable. Highly recommended."
+          </p>
+          <strong>- John D.</strong>
+        </div>
+
+        <!-- REVIEW 3 -->
+        <div class="card">
+          <div class="badge">★★★★★</div>
+          <p id="rev3">
+            "Amazing attention to detail. Everything looks spotless every time."
+          </p>
+          <strong>- Emily R.</strong>
+        </div>
+
+        <!-- EXTRA REVIEW -->
+        <div class="card">
+          <div class="badge">★★★★★</div>
+          <p>
+            "Great communication and outstanding results. Will definitely book again."
+          </p>
+          <strong>- Michael T.</strong>
+        </div>
+
+        <!-- EXTRA REVIEW -->
+        <div class="card">
+          <div class="badge">★★★★★</div>
+          <p>
+            "Reliable and efficient service. Highly satisfied with the quality."
+          </p>
+          <strong>- Laura K.</strong>
+        </div>
+
+        <!-- TRUST CARD -->
+        <div class="card">
+          <div class="badge">Trusted</div>
+          <h3>Consistent Quality</h3>
+          <p>
+            We focus on delivering reliable, detailed, and professional cleaning services every time.
+          </p>
+        </div>
+
       </div>
 
     </div>
@@ -72,6 +129,27 @@
   </div>
 </section>
 
+<!-- CTA -->
+<section>
+  <div class="container">
+
+    <div class="section-box" style="text-align:center;">
+
+      <h2>Ready to Experience Our Service?</h2>
+      <div class="divider"></div>
+
+      <p class="text-box">
+        Join our satisfied clients and get a professional cleaning service you can trust.
+      </p>
+
+      <a href="contact.html" class="btn btn-primary">Request a Free Quote</a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FLOAT -->
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
@@ -93,23 +171,12 @@ function applyLanguage() {
     document.querySelectorAll('nav a')[6].innerText = 'Contact';
 
     document.querySelector('.quote-float').innerText = 'Obtenir un devis';
-    document.querySelector('.hero-small h1').innerText = 'Avis des clients';
 
     document.getElementById('rev1').innerText = "Service excellent ! Ma maison n’a jamais été aussi propre.";
     document.getElementById('rev2').innerText = "Très professionnel et fiable. Fortement recommandé.";
     document.getElementById('rev3').innerText = "Incroyable attention aux détails. Tout est impeccable.";
-
   } else {
-    document.querySelectorAll('nav a')[0].innerText = 'Home';
-    document.querySelectorAll('nav a')[1].innerText = 'Services';
-    document.querySelectorAll('nav a')[2].innerText = 'Process';
-    document.querySelectorAll('nav a')[3].innerText = 'Reviews';
-    document.querySelectorAll('nav a')[4].innerText = 'Our Work';
-    document.querySelectorAll('nav a')[5].innerText = 'Gallery';
-    document.querySelectorAll('nav a')[6].innerText = 'Contact';
-
     document.querySelector('.quote-float').innerText = 'Get a Free Quote';
-    document.querySelector('.hero-small h1').innerText = 'Client Reviews';
   }
 }
 
