@@ -22,34 +22,46 @@
       </div>
     </div>
 
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="work.html">Our Work</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="cta">Contact</a>
-    </nav>
+    <div class="nav-wrapper">
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="work.html">Our Work</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+      </div>
+    </div>
 
   </div>
 </header>
 
 <main>
 
-<!-- HERO EMPRESARIAL -->
+<!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
 
     <div class="hero-text">
-      <h1>Professional Cleaning Services You Can Trust</h1>
+      <h1 id="hero-title">Professional Cleaning Services You Can Trust</h1>
 
-      <p class="hero-sub">
-        Reliable residential and commercial cleaning services in Moncton.
-        We deliver consistent quality and attention to detail.
+      <p class="hero-sub" id="hero-sub">
+        Professional residential and commercial cleaning services in Moncton.
+        Explore our services and find the perfect solution for your space.
       </p>
 
-      <a href="contact.html" class="btn">Request a Quote</a>
+      <!-- 🔥 DOBLE CTA -->
+      <a href="contact.html" class="btn" id="hero-btn">Request a Quote</a>
+
+      <a href="services.html" class="btn" style="margin-left:10px; background:#1E3A5F;" id="hero-btn2">
+        View Our Services
+      </a>
     </div>
 
     <div class="hero-image">
@@ -62,18 +74,38 @@
 <!-- ABOUT -->
 <section>
   <div class="container">
-
     <div class="section-box">
 
-      <h2 class="section-title">About Our Company</h2>
+      <h2 class="section-title" id="about-title">About Our Company</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="about-text">
         North Crescent Facility Solutions Inc is a professional cleaning company based in Moncton, New Brunswick.
         We provide high-quality residential and commercial cleaning services with a strong commitment to consistency,
         attention to detail, and customer satisfaction.
       </p>
 
+    </div>
+  </div>
+</section>
+
+<!-- 🔥 MINI SERVICES (TRÁFICO A SERVICES) -->
+<section>
+  <div class="container">
+
+    <h2 class="section-title">Our Services</h2>
+    <div class="divider"></div>
+
+    <div class="grid grid-3">
+
+      <div class="card"><h3>Residential Cleaning</h3></div>
+      <div class="card"><h3>Commercial Cleaning</h3></div>
+      <div class="card"><h3>Move-In / Move-Out</h3></div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:30px;">
+      <a href="services.html" class="btn">View All Services</a>
     </div>
 
   </div>
@@ -82,68 +114,45 @@
 <!-- WHY CHOOSE US -->
 <section>
   <div class="container">
-
     <div class="section-box">
 
-      <h2 class="section-title">Why Choose Us</h2>
+      <h2 class="section-title" id="why-title">Why Choose Us</h2>
       <div class="divider"></div>
 
       <div class="grid grid-3">
 
-        <div class="card">
-          <h3>Reliable Service</h3>
-          <p>We show up on time, every time.</p>
-        </div>
-
-        <div class="card">
-          <h3>Attention to Detail</h3>
-          <p>No corner goes untouched.</p>
-        </div>
-
-        <div class="card">
-          <h3>Professional Team</h3>
-          <p>Trained and insured staff.</p>
-        </div>
-
-        <div class="card">
-          <h3>Flexible Scheduling</h3>
-          <p>Services tailored to your needs.</p>
-        </div>
-
-        <div class="card">
-          <h3>Satisfaction Guaranteed</h3>
-          <p>We stand behind our work.</p>
-        </div>
-
-        <div class="card">
-          <h3>Consistent Quality</h3>
-          <p>High standards every visit.</p>
-        </div>
+        <div class="card"><h3>Reliable Service</h3><p>We show up on time, every time.</p></div>
+        <div class="card"><h3>Attention to Detail</h3><p>No corner goes untouched.</p></div>
+        <div class="card"><h3>Professional Team</h3><p>Trained and insured staff.</p></div>
+        <div class="card"><h3>Flexible Scheduling</h3><p>Services tailored to your needs.</p></div>
+        <div class="card"><h3>Satisfaction Guaranteed</h3><p>We stand behind our work.</p></div>
+        <div class="card"><h3>Consistent Quality</h3><p>High standards every visit.</p></div>
 
       </div>
 
     </div>
-
   </div>
 </section>
 
 <!-- CTA FINAL -->
 <section>
   <div class="container">
-
     <div class="section-box" style="text-align:center;">
 
-      <h2>Ready to Work With Us?</h2>
+      <h2 id="cta-title">Ready to Work With Us?</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
-        Contact us today and receive a personalized quote tailored to your needs.
+      <p class="text-box" id="cta-text">
+        Contact us today or explore our services to find the best solution for your needs.
       </p>
 
+      <!-- 🔥 CTA DOBLE -->
       <a href="contact.html" class="btn">Get a Free Quote</a>
+      <a href="services.html" class="btn" style="margin-left:10px; background:#1E3A5F;">
+        Explore Our Services
+      </a>
 
     </div>
-
   </div>
 </section>
 
@@ -156,6 +165,39 @@
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
+
+<!-- 🔥 SCRIPT TRADUCTOR (MISMO QUE YA TENÍAS) -->
+<script>
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
+}
+
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  if (lang === 'fr') {
+
+    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Processus';
+    document.querySelectorAll('nav a')[3].innerText = 'Avis';
+    document.querySelectorAll('nav a')[4].innerText = 'Réalisations';
+    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+
+    document.getElementById('hero-title').innerText = 'Services de nettoyage professionnels fiables';
+    document.getElementById('hero-sub').innerText = 'Services de nettoyage résidentiels et commerciaux à Moncton.';
+    document.getElementById('hero-btn').innerText = 'Demander un devis';
+    document.getElementById('hero-btn2').innerText = 'Voir nos services';
+
+  } else {
+    location.reload();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', applyLanguage);
+</script>
 
 </body>
 </html>
