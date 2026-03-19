@@ -31,8 +31,8 @@
     <a href="services.html">Services</a>
     <a href="process.html">Process</a>
     <a href="reviews.html">Reviews</a>
-    <a href="work.html" class="active">Our Work</a>
-    <a href="gallery.html">Gallery</a>
+    <a href="work.html">Our Work</a>
+    <a href="gallery.html" class="active">Gallery</a>
     <a href="contact.html" class="cta">Contact</a>
   </nav>
 
@@ -52,12 +52,12 @@
   <div class="container hero-content">
 
 ```
-<div class="badge" id="badge-work">Our Work</div>
+<div class="badge" id="badge-gallery">Gallery</div>
 
-<h1 id="hero-title">See the Quality We Deliver</h1>
+<h1 id="hero-title">Our Cleaning Gallery</h1>
 
 <p class="hero-sub" id="hero-sub">
-  Real results from real cleaning projects
+  Explore our work and see the difference we make
 </p>
 
 <div class="divider"></div>
@@ -66,7 +66,7 @@
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY GRID -->
 
 <section>
   <div class="container">
@@ -74,52 +74,52 @@
 ```
 <div class="section-box">
 
-  <h2 class="section-title" id="section-title">Our Cleaning Results</h2>
+  <h2 class="section-title" id="section-title">Project Highlights</h2>
   <div class="divider"></div>
 
   <p class="text-box" id="section-text">
-    Take a look at our recent work. We focus on detail, consistency, and delivering spotless results every time.
+    A collection of our recent cleaning projects showcasing quality, precision, and attention to detail.
   </p>
 
   <div class="grid grid-3">
 
     <div class="card">
-      <div class="badge" id="b1">Before / After</div>
+      <div class="badge" id="g1">Before / After</div>
       <div class="image-frame">
         <img src="images/gallery1.jpg" alt="">
       </div>
     </div>
 
     <div class="card">
-      <div class="badge" id="b2">Residential</div>
+      <div class="badge" id="g2">Residential</div>
       <div class="image-frame">
         <img src="images/gallery2.jpg" alt="">
       </div>
     </div>
 
     <div class="card">
-      <div class="badge" id="b3">Deep Cleaning</div>
+      <div class="badge" id="g3">Deep Cleaning</div>
       <div class="image-frame">
         <img src="images/gallery3.jpg" alt="">
       </div>
     </div>
 
     <div class="card">
-      <div class="badge" id="b4">Commercial</div>
+      <div class="badge" id="g4">Commercial</div>
       <div class="image-frame">
         <img src="images/gallery4.jpg" alt="">
       </div>
     </div>
 
     <div class="card">
-      <div class="badge" id="b5">Move-Out</div>
+      <div class="badge" id="g5">Move-Out</div>
       <div class="image-frame">
         <img src="images/gallery5.jpg" alt="">
       </div>
     </div>
 
     <div class="card">
-      <div class="badge" id="b6">Detailed Finish</div>
+      <div class="badge" id="g6">Detailed Finish</div>
       <div class="image-frame">
         <img src="images/gallery6.jpg" alt="">
       </div>
@@ -141,11 +141,11 @@
 ```
 <div class="section-box" style="text-align:center;">
 
-  <h2 id="cta-title">Want Results Like These?</h2>
+  <h2 id="cta-title">Need Professional Cleaning?</h2>
   <div class="divider"></div>
 
   <p class="text-box" id="cta-text">
-    Get a professional cleaning service you can trust. Fast quotes and reliable results.
+    Let our team deliver spotless results tailored to your needs.
   </p>
 
   <a href="contact.html" class="btn btn-primary" id="cta-btn">Request a Free Quote</a>
@@ -158,13 +158,13 @@
 
 <!-- FLOAT -->
 
-<a class="quote-float" href="contact.html" id="float-btn">Get a Free Quote</a> <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
+<a class="quote-float" href="contact.html">Get a Free Quote</a> <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
-<!-- 🌍 TRANSLATOR FIXED -->
+<!-- 🌍 TRANSLATOR PRO -->
 
 <script>
 function setLanguage(lang) {
@@ -175,38 +175,67 @@ function setLanguage(lang) {
 function applyLanguage() {
   const lang = localStorage.getItem('lang') || 'en';
 
-  // ✅ FIX: evitar loop infinito
-  if (lang === 'en') return;
+  const nav = document.querySelectorAll('nav a');
 
   if (lang === 'fr') {
 
-    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
-    document.querySelectorAll('nav a')[1].innerText = 'Services';
-    document.querySelectorAll('nav a')[2].innerText = 'Processus';
-    document.querySelectorAll('nav a')[3].innerText = 'Avis';
-    document.querySelectorAll('nav a')[4].innerText = 'Nos travaux';
-    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
-    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+    nav[0].innerText = 'Accueil';
+    nav[1].innerText = 'Services';
+    nav[2].innerText = 'Processus';
+    nav[3].innerText = 'Avis';
+    nav[4].innerText = 'Nos travaux';
+    nav[5].innerText = 'Galerie';
+    nav[6].innerText = 'Contact';
 
-    document.getElementById('badge-work').innerText = 'Nos travaux';
-    document.getElementById('hero-title').innerText = 'Découvrez la qualité de notre travail';
-    document.getElementById('hero-sub').innerText = 'Des résultats réels pour des projets réels';
+    document.getElementById('badge-gallery').innerText = 'Galerie';
+    document.getElementById('hero-title').innerText = 'Notre galerie de nettoyage';
+    document.getElementById('hero-sub').innerText = 'Découvrez notre travail et la différence que nous faisons';
 
-    document.getElementById('section-title').innerText = 'Nos résultats de nettoyage';
-    document.getElementById('section-text').innerText = 'Découvrez nos travaux récents. Nous nous concentrons sur les détails et la qualité.';
+    document.getElementById('section-title').innerText = 'Projets récents';
+    document.getElementById('section-text').innerText = 'Une sélection de nos projets récents mettant en valeur la qualité et la précision.';
 
-    document.getElementById('b1').innerText = 'Avant / Après';
-    document.getElementById('b2').innerText = 'Résidentiel';
-    document.getElementById('b3').innerText = 'Nettoyage en profondeur';
-    document.getElementById('b4').innerText = 'Commercial';
-    document.getElementById('b5').innerText = 'Déménagement';
-    document.getElementById('b6').innerText = 'Finition détaillée';
+    document.getElementById('g1').innerText = 'Avant / Après';
+    document.getElementById('g2').innerText = 'Résidentiel';
+    document.getElementById('g3').innerText = 'Nettoyage en profondeur';
+    document.getElementById('g4').innerText = 'Commercial';
+    document.getElementById('g5').innerText = 'Déménagement';
+    document.getElementById('g6').innerText = 'Finition détaillée';
 
-    document.getElementById('cta-title').innerText = 'Vous voulez ces résultats ?';
-    document.getElementById('cta-text').innerText = 'Obtenez un service professionnel fiable avec des résultats rapides.';
+    document.getElementById('cta-title').innerText = 'Besoin de nettoyage professionnel ?';
+    document.getElementById('cta-text').innerText = 'Notre équipe offre des résultats impeccables adaptés à vos besoins.';
     document.getElementById('cta-btn').innerText = 'Demander un devis';
 
-    document.getElementById('float-btn').innerText = 'Devis';
+    document.querySelector('.quote-float').innerText = 'Devis';
+
+  } else {
+
+    nav[0].innerText = 'Home';
+    nav[1].innerText = 'Services';
+    nav[2].innerText = 'Process';
+    nav[3].innerText = 'Reviews';
+    nav[4].innerText = 'Our Work';
+    nav[5].innerText = 'Gallery';
+    nav[6].innerText = 'Contact';
+
+    document.getElementById('badge-gallery').innerText = 'Gallery';
+    document.getElementById('hero-title').innerText = 'Our Cleaning Gallery';
+    document.getElementById('hero-sub').innerText = 'Explore our work and see the difference we make';
+
+    document.getElementById('section-title').innerText = 'Project Highlights';
+    document.getElementById('section-text').innerText = 'A collection of our recent cleaning projects showcasing quality, precision, and attention to detail.';
+
+    document.getElementById('g1').innerText = 'Before / After';
+    document.getElementById('g2').innerText = 'Residential';
+    document.getElementById('g3').innerText = 'Deep Cleaning';
+    document.getElementById('g4').innerText = 'Commercial';
+    document.getElementById('g5').innerText = 'Move-Out';
+    document.getElementById('g6').innerText = 'Detailed Finish';
+
+    document.getElementById('cta-title').innerText = 'Need Professional Cleaning?';
+    document.getElementById('cta-text').innerText = 'Let our team deliver spotless results tailored to your needs.';
+    document.getElementById('cta-btn').innerText = 'Request a Free Quote';
+
+    document.querySelector('.quote-float').innerText = 'Get a Free Quote';
   }
 }
 
