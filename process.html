@@ -7,8 +7,6 @@
 <title>Our Cleaning Process | North Crescent Facility Solutions</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- CSS GLOBAL -->
 <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -28,7 +26,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
+      <a href="process.html" class="active">Process</a>
       <a href="reviews.html">Reviews</a>
       <a href="work.html">Our Work</a>
       <a href="gallery.html">Gallery</a>
@@ -38,42 +36,92 @@
   </div>
 </header>
 
-<section class="hero-small">
-  <div class="container">
-    <h1>Our Cleaning Process</h1>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="badge">Our Process</div>
+
+    <h1>How We Deliver Professional Results</h1>
+
+    <p class="hero-sub">
+      Simple, structured, and focused on quality
+    </p>
+
+    <div class="divider"></div>
+
   </div>
 </section>
 
+<!-- PROCESS -->
 <section>
   <div class="container">
 
-    <h2>How We Work</h2>
+    <div class="section-box">
 
-    <div class="process">
+      <h2 class="section-title">How We Work</h2>
+      <div class="divider"></div>
 
-      <div class="step">
-        <h3>1. Request & Consultation</h3>
-        <p>Contact us and tell us about your cleaning needs. We assess your space and recommend the best service.</p>
-      </div>
+      <p class="text-box">
+        Our process is designed to ensure consistent quality, efficiency, and complete customer satisfaction.
+      </p>
 
-      <div class="step">
-        <h3>2. Customized Plan</h3>
-        <p>We create a cleaning plan tailored to your property, schedule, and specific requirements.</p>
-      </div>
+      <div class="grid grid-3">
 
-      <div class="step">
-        <h3>3. Professional Cleaning</h3>
-        <p>Our trained team arrives on time and performs detailed, high-quality cleaning using professional methods.</p>
-      </div>
+        <!-- STEP 1 -->
+        <div class="card">
+          <div class="badge">Step 1</div>
+          <h3>Request & Consultation</h3>
+          <p>
+            Contact us and tell us about your cleaning needs. We assess your space and recommend the best service.
+          </p>
+        </div>
 
-      <div class="step">
-        <h3>4. Quality Check</h3>
-        <p>We inspect every area to ensure everything meets our high standards.</p>
-      </div>
+        <!-- STEP 2 -->
+        <div class="card">
+          <div class="badge">Step 2</div>
+          <h3>Customized Plan</h3>
+          <p>
+            We create a cleaning plan tailored to your property, schedule, and specific requirements.
+          </p>
+        </div>
 
-      <div class="step">
-        <h3>5. Client Satisfaction</h3>
-        <p>We make sure you are fully satisfied and your space looks spotless, fresh, and ready.</p>
+        <!-- STEP 3 -->
+        <div class="card">
+          <div class="badge">Step 3</div>
+          <h3>Professional Cleaning</h3>
+          <p>
+            Our trained team arrives on time and performs detailed, high-quality cleaning using professional methods.
+          </p>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="card">
+          <div class="badge">Step 4</div>
+          <h3>Quality Check</h3>
+          <p>
+            We inspect every area to ensure everything meets our high standards.
+          </p>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="card">
+          <div class="badge">Step 5</div>
+          <h3>Client Satisfaction</h3>
+          <p>
+            We ensure you are fully satisfied and your space is spotless, fresh, and ready.
+          </p>
+        </div>
+
+        <!-- EXTRA VALUE -->
+        <div class="card">
+          <div class="badge">Our Promise</div>
+          <h3>Consistent Quality</h3>
+          <p>
+            Every service is delivered with attention to detail and a commitment to excellence.
+          </p>
+        </div>
+
       </div>
 
     </div>
@@ -81,6 +129,27 @@
   </div>
 </section>
 
+<!-- CTA -->
+<section>
+  <div class="container">
+
+    <div class="section-box" style="text-align:center;">
+
+      <h2>Ready to Experience Our Process?</h2>
+      <div class="divider"></div>
+
+      <p class="text-box">
+        Book your cleaning today and let our professional team take care of everything.
+      </p>
+
+      <a href="contact.html" class="btn btn-primary">Request a Free Quote</a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FLOAT -->
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
@@ -102,37 +171,7 @@ function applyLanguage() {
     document.querySelectorAll('nav a')[6].innerText = 'Contact';
 
     document.querySelector('.quote-float').innerText = 'Obtenir un devis';
-
-    document.querySelector('.hero-small h1').innerText = 'Notre processus de nettoyage';
-    document.querySelector('h2').innerText = 'Comment nous travaillons';
-
-    const steps = document.querySelectorAll('.step h3');
-    const desc = document.querySelectorAll('.step p');
-
-    steps[0].innerText = '1. Demande et consultation';
-    desc[0].innerText = 'Contactez-nous et expliquez vos besoins. Nous évaluons votre espace et recommandons le meilleur service.';
-
-    steps[1].innerText = '2. Plan personnalisé';
-    desc[1].innerText = 'Nous créons un plan adapté à votre propriété et vos besoins.';
-
-    steps[2].innerText = '3. Nettoyage professionnel';
-    desc[2].innerText = 'Notre équipe intervient avec des méthodes professionnelles et efficaces.';
-
-    steps[3].innerText = '4. Contrôle qualité';
-    desc[3].innerText = 'Nous vérifions chaque détail pour garantir un résultat impeccable.';
-
-    steps[4].innerText = '5. Satisfaction client';
-    desc[4].innerText = 'Votre satisfaction est notre priorité.';
-
   } else {
-    document.querySelectorAll('nav a')[0].innerText = 'Home';
-    document.querySelectorAll('nav a')[1].innerText = 'Services';
-    document.querySelectorAll('nav a')[2].innerText = 'Process';
-    document.querySelectorAll('nav a')[3].innerText = 'Reviews';
-    document.querySelectorAll('nav a')[4].innerText = 'Our Work';
-    document.querySelectorAll('nav a')[5].innerText = 'Gallery';
-    document.querySelectorAll('nav a')[6].innerText = 'Contact';
-
     document.querySelector('.quote-float').innerText = 'Get a Free Quote';
   }
 }
