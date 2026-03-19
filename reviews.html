@@ -8,108 +8,113 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --primary: #1E3A5F;
-  --secondary: #4A9B8C;
-  --accent: #2EC4B6;
-  --light: #F5F7FA;
-  --dark: #0F172A;
-}
+<!-- CSS GLOBAL -->
+<link rel="stylesheet" href="styles.css">
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--light);
-  margin: 0;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: white;
-  align-items: center;
-}
-
-header img { height: 60px; }
-
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: var(--primary);
-}
-
-h1 {
-  text-align: center;
-  margin: 40px;
-  color: var(--primary);
-}
-
-.reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
-}
-
-.review-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  text-align: center;
-}
-
-.stars {
-  color: #FFD700;
-  margin-bottom: 10px;
-}
-
-.quote-float {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  background: var(--accent);
-  color: white;
-  padding: 15px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-}
-</style>
 </head>
 
 <body>
 
 <header>
-  <img src="images/logo.png" alt="North Crescent Facility Solutions Logo">
+  <div class="container header-inner">
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="process.html">Process</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="work.html">Our Work</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html" class="cta">Contact Us</a>
-  </nav>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="North Crescent Logo">
+      <div class="brand-title">
+        North Crescent <span>Facility Solutions</span>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="work.html">Our Work</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="cta">Contact</a>
+    </nav>
+
+  </div>
 </header>
 
-<h1>Client Reviews</h1>
+<section class="hero-small">
+  <div class="container">
+    <h1>Client Reviews</h1>
+  </div>
+</section>
 
-<div class="reviews">
+<section>
+  <div class="container">
 
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p id="rev1">"Excellent service! My house has never been this clean."</p>
-<strong>- Sarah M.</strong>
-</div>
+    <div class="reviews">
 
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p id="rev2">"Very professional and reliable. Highly recommended."</p>
-<strong>- John D.</strong>
-</div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p id="rev1">"Excellent service! My house has never been this clean."</p>
+        <strong>- Sarah M.</strong>
+      </div>
 
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p id="rev3">"Amazing attention to detail
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p id="rev2">"Very professional and reliable. Highly recommended."</p>
+        <strong>- John D.</strong>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p id="rev3">"Amazing attention to detail. Everything looks spotless every time."</p>
+        <strong>- Emily R.</strong>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="whatsapp" href="https://wa.me/14288880542">💬</a>
+
+<footer>
+  <p>© 2026 North Crescent Facility Solutions Inc</p>
+</footer>
+
+<script>
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  if (lang === 'fr') {
+    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Processus';
+    document.querySelectorAll('nav a')[3].innerText = 'Avis';
+    document.querySelectorAll('nav a')[4].innerText = 'Nos travaux';
+    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+
+    document.querySelector('.quote-float').innerText = 'Obtenir un devis';
+    document.querySelector('.hero-small h1').innerText = 'Avis des clients';
+
+    document.getElementById('rev1').innerText = "Service excellent ! Ma maison n’a jamais été aussi propre.";
+    document.getElementById('rev2').innerText = "Très professionnel et fiable. Fortement recommandé.";
+    document.getElementById('rev3').innerText = "Incroyable attention aux détails. Tout est impeccable.";
+
+  } else {
+    document.querySelectorAll('nav a')[0].innerText = 'Home';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Process';
+    document.querySelectorAll('nav a')[3].innerText = 'Reviews';
+    document.querySelectorAll('nav a')[4].innerText = 'Our Work';
+    document.querySelectorAll('nav a')[5].innerText = 'Gallery';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+
+    document.querySelector('.quote-float').innerText = 'Get a Free Quote';
+    document.querySelector('.hero-small h1').innerText = 'Client Reviews';
+  }
+}
+
+window.onload = applyLanguage;
+</script>
+
+</body>
+</html>
