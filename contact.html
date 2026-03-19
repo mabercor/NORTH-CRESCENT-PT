@@ -3,13 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Contact | North Crescent Facility Solutions</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Contact North Crescent Facility Solutions Ltd for professional cleaning services in Moncton, NB. Reliable residential and commercial cleaning.">
+  <meta name="description" content="Get a fast quote for professional cleaning services in Moncton, NB. Residential and commercial cleaning experts.">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .success-message {
+      display: none;
+      margin-top: 10px;
+      color: #4A9B8C;
+      font-weight: bold;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin-right: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #1E3A5F;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+  </style>
 
 </head>
 
@@ -19,7 +49,7 @@
 <header>
   <div class="header-inner">
     <div class="logo">
-      <img src="images/logo.png" alt="North Crescent Logo">
+      <img src="images/logo.png" alt="North Crescent Facility Solutions Logo">
     </div>
 
     <nav>
@@ -35,37 +65,44 @@
 
 <!-- HERO -->
 <section class="page-hero">
-  <h1>Contact Us</h1>
-  <p>We’re ready to help you with professional cleaning solutions</p>
+  <h1>Get Your Free Quote</h1>
+  <p>Fast response. Professional service. No obligation.</p>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <section class="contact-section">
-
   <div class="contact-container">
 
-    <!-- LEFT INFO -->
+    <!-- INFO -->
     <div class="contact-info">
-      <h2>Get In Touch</h2>
-      <p>Reach out to us for quotes, questions, or service requests. Our team is ready to assist you.</p>
+      <h2>Let’s Talk</h2>
+      <p>Tell us what you need and our team will respond within 24 hours.</p>
 
       <ul>
         <li><strong>Location:</strong> Moncton, New Brunswick</li>
         <li><strong>Email:</strong> info@northcrescent.ca</li>
-        <li><strong>Phone:</strong> +1 (506) XXX-XXXX</li>
+        <li><strong>Phone:</strong> <a href="tel:+14288880542">+1 428 888 0542</a></li>
         <li><strong>Hours:</strong> Mon - Sat | 8:00 AM - 6:00 PM</li>
       </ul>
+
+      <!-- SOCIAL -->
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61580557412140" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/northcrescentcleaningsolutions/" target="_blank">Instagram</a>
+      </div>
+
+      <p><strong>Tip:</strong> Providing details helps us give you a faster and more accurate quote.</p>
     </div>
 
     <!-- FORM -->
     <div class="contact-form">
-      <form action="#" method="POST">
+      <form id="contactForm" action="https://formspree.io/f/xvzwvbed" method="POST">
 
         <input type="text" name="name" placeholder="Full Name" required>
 
         <input type="email" name="email" placeholder="Email Address" required>
 
-        <input type="text" name="phone" placeholder="Phone Number">
+        <input type="tel" name="phone" placeholder="Phone Number">
 
         <select name="service" required>
           <option value="">Select Service</option>
@@ -77,20 +114,23 @@
           <option>Airbnb Cleaning</option>
         </select>
 
-        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+        <textarea name="message" rows="5" placeholder="Describe your needs..." required></textarea>
 
-        <button type="submit">Request a Quote</button>
+        <button type="submit">Request a Free Quote</button>
+
+        <div class="success-message" id="successMessage">
+          ✅ Your request has been sent! We’ll contact you shortly.
+        </div>
 
       </form>
     </div>
 
   </div>
-
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Professional Cleaning You Can Trust</h2>
+  <h2>Reliable. Professional. Detail-Oriented.</h2>
   <a href="services.html" class="btn">Explore Services</a>
 </section>
 
@@ -99,20 +139,36 @@
   <p>© 2026 North Crescent Facility Solutions Ltd. All rights reserved.</p>
 </footer>
 
-<!-- LANGUAGE SCRIPT (BÁSICO) -->
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/14288880542" target="_blank" class="whatsapp-float">
+  💬 Chat Now
+</a>
+
+<!-- SCRIPT -->
 <script>
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
+const form = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
 
-  if (lang === 'fr') {
-    document.querySelector('.page-hero h1').innerText = 'Contactez-nous';
-    document.querySelector('.page-hero p').innerText = 'Nous sommes prêts à vous aider avec des solutions de nettoyage professionnelles';
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-    document.querySelector('.contact-info h2').innerText = 'Entrer en contact';
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    form.reset();
+    successMessage.style.display = "block";
+  } else {
+    alert("Something went wrong. Please try again.");
   }
-}
-
-applyLanguage();
+});
 </script>
 
 </body>
