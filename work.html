@@ -1,14 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact | North Crescent Facility Solutions</title>
-<meta name="description" content="Get a fast quote for professional cleaning services in Moncton, NB.">
+<title>Our Work Gallery | North Crescent Facility Solutions</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -16,183 +16,157 @@
 <header>
   <div class="container header-inner">
 
-    <div class="logo-container">
-      <img src="images/logo.png" alt="North Crescent Logo">
-      <div class="brand-title">
-        North Crescent <span>Facility Solutions</span>
-      </div>
-    </div>
+```
+<div class="logo-container">
+  <img src="images/logo.png" alt="North Crescent Logo">
+  <div class="brand-title">
+    North Crescent <span>Facility Solutions</span>
+  </div>
+</div>
 
-    <!-- NAV + LANG -->
-    <div class="nav-wrapper">
+<!-- NAV + LANG -->
+<div class="nav-wrapper">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="process.html">Process</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="work.html" class="active">Our Work</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="cta">Contact</a>
+  </nav>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="process.html">Process</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="work.html">Our Work</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html" class="active">Contact</a>
-      </nav>
-
-      <!-- LANGUAGE SWITCH -->
-      <div class="lang-switch">
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="setLanguage('fr')">FR</button>
-      </div>
-
-    </div>
+  <div class="lang-switch">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('fr')">FR</button>
+  </div>
+</div>
+```
 
   </div>
 </header>
 
-<main>
-
 <!-- HERO -->
+
 <section class="hero">
-  <div class="container hero-grid">
+  <div class="container hero-content">
 
-    <div class="hero-text">
-      <h1 id="heroTitle">Get Your Free Quote</h1>
-      <p class="hero-sub" id="heroSub">
-        Fast response. Professional service. Reliable results.
-      </p>
-    </div>
+```
+<div class="badge" id="badge-work">Our Work</div>
 
-    <div class="hero-image">
-      <img src="images/hero.jpg" alt="Cleaning Service">
-    </div>
+<h1 id="hero-title">See the Quality We Deliver</h1>
+
+<p class="hero-sub" id="hero-sub">
+  Real results from real cleaning projects
+</p>
+
+<div class="divider"></div>
+```
 
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- GALLERY -->
+
 <section>
   <div class="container">
 
-    <div class="section-box">
+```
+<div class="section-box">
 
-      <h2 class="section-title" id="contactTitle">Let’s Talk</h2>
-      <div class="divider"></div>
+  <h2 class="section-title" id="section-title">Our Cleaning Results</h2>
+  <div class="divider"></div>
 
-      <p class="text-box" id="contactDesc">
-        Tell us about your cleaning needs and we’ll get back to you within 24 hours.
-      </p>
+  <p class="text-box" id="section-text">
+    Take a look at our recent work. We focus on detail, consistency, and delivering spotless results every time.
+  </p>
 
-      <div class="grid grid-2">
+  <div class="grid grid-3">
 
-        <!-- INFO -->
-        <div class="card">
-          <h3 id="infoTitle">Contact Info</h3>
-
-          <p><strong id="locLabel">Location:</strong> Moncton, NB</p>
-          <p><strong>Email:</strong> info@northcrescent.ca</p>
-          <p><strong id="phoneLabel">Phone:</strong> <a href="tel:+14288880542">+1 428 888 0542</a></p>
-
-          <div style="margin-top:15px;">
-            <a href="#" class="btn">Facebook</a>
-            <a href="#" class="btn">Instagram</a>
-          </div>
-        </div>
-
-        <!-- FORM -->
-        <div class="card">
-
-          <h3 id="formTitle">Request a Quote</h3>
-
-          <form id="contactForm" action="https://formspree.io/f/xvzwvbed" method="POST">
-
-            <input type="text" name="name" id="nameInput" placeholder="Full Name" required>
-            <input type="email" name="email" id="emailInput" placeholder="Email Address" required>
-            <input type="tel" name="phone" id="phoneInput" placeholder="Phone Number">
-
-            <select name="service" id="serviceSelect" required>
-              <option value="">Select Service</option>
-              <option>Residential Cleaning</option>
-              <option>Deep Cleaning</option>
-              <option>Move-In / Move-Out</option>
-              <option>Post-Construction</option>
-              <option>Commercial Cleaning</option>
-              <option>Airbnb Cleaning</option>
-            </select>
-
-            <textarea name="message" rows="4" id="messageInput" placeholder="Describe your needs..." required></textarea>
-
-            <button type="submit" class="btn" id="submitBtn">
-              Request a Free Quote
-            </button>
-
-            <div class="success-message" id="successMessage" style="display:none; margin-top:10px;">
-              ✅ Message sent successfully!
-            </div>
-
-          </form>
-
-        </div>
-
+    <div class="card">
+      <div class="badge" id="b1">Before / After</div>
+      <div class="image-frame">
+        <img src="images/gallery1.jpg" alt="">
       </div>
-
     </div>
+
+    <div class="card">
+      <div class="badge" id="b2">Residential</div>
+      <div class="image-frame">
+        <img src="images/gallery2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="badge" id="b3">Deep Cleaning</div>
+      <div class="image-frame">
+        <img src="images/gallery3.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="badge" id="b4">Commercial</div>
+      <div class="image-frame">
+        <img src="images/gallery4.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="badge" id="b5">Move-Out</div>
+      <div class="image-frame">
+        <img src="images/gallery5.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="badge" id="b6">Detailed Finish</div>
+      <div class="image-frame">
+        <img src="images/gallery6.jpg" alt="">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+```
 
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- CTA -->
+
 <section>
   <div class="container">
 
-    <div class="section-box" style="text-align:center;">
+```
+<div class="section-box" style="text-align:center;">
 
-      <h2 id="ctaTitle">Ready to Book Your Cleaning?</h2>
-      <div class="divider"></div>
+  <h2 id="cta-title">Want Results Like These?</h2>
+  <div class="divider"></div>
 
-      <p class="text-box" id="ctaText">
-        Get professional cleaning with reliable results and attention to detail.
-      </p>
+  <p class="text-box" id="cta-text">
+    Get a professional cleaning service you can trust. Fast quotes and reliable results.
+  </p>
 
-      <a href="tel:+14288880542" class="btn" id="ctaBtn">Call Now</a>
+  <a href="contact.html" class="btn btn-primary" id="cta-btn">Request a Free Quote</a>
 
-    </div>
+</div>
+```
 
   </div>
 </section>
-
-</main>
 
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html" id="floatBtn">Quote</a>
-<a class="whatsapp" href="https://wa.me/14288880542">💬</a>
+
+<a class="quote-float" href="contact.html" id="float-btn">Get a Free Quote</a> <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
+<!-- 🌍 TRANSLATOR FIXED -->
+
 <script>
-// ===== FORM =====
-const form = document.getElementById("contactForm");
-const successMessage = document.getElementById("successMessage");
-
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const data = new FormData(form);
-
-  const response = await fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  });
-
-  if (response.ok) {
-    form.reset();
-    successMessage.style.display = "block";
-  } else {
-    alert("Error sending message.");
-  }
-});
-
-// ===== LANGUAGE SYSTEM =====
 function setLanguage(lang) {
   localStorage.setItem('lang', lang);
   applyLanguage();
@@ -200,6 +174,9 @@ function setLanguage(lang) {
 
 function applyLanguage() {
   const lang = localStorage.getItem('lang') || 'en';
+
+  // ✅ FIX: evitar loop infinito
+  if (lang === 'en') return;
 
   if (lang === 'fr') {
 
@@ -211,37 +188,29 @@ function applyLanguage() {
     document.querySelectorAll('nav a')[5].innerText = 'Galerie';
     document.querySelectorAll('nav a')[6].innerText = 'Contact';
 
-    document.getElementById('heroTitle').innerText = 'Obtenez votre devis gratuit';
-    document.getElementById('heroSub').innerText = 'Réponse rapide. Service professionnel. Résultats fiables.';
+    document.getElementById('badge-work').innerText = 'Nos travaux';
+    document.getElementById('hero-title').innerText = 'Découvrez la qualité de notre travail';
+    document.getElementById('hero-sub').innerText = 'Des résultats réels pour des projets réels';
 
-    document.getElementById('contactTitle').innerText = 'Parlons-en';
-    document.getElementById('contactDesc').innerText = 'Parlez-nous de vos besoins et nous vous répondrons sous 24h.';
+    document.getElementById('section-title').innerText = 'Nos résultats de nettoyage';
+    document.getElementById('section-text').innerText = 'Découvrez nos travaux récents. Nous nous concentrons sur les détails et la qualité.';
 
-    document.getElementById('infoTitle').innerText = 'Informations';
-    document.getElementById('locLabel').innerText = 'Localisation :';
-    document.getElementById('phoneLabel').innerText = 'Téléphone :';
+    document.getElementById('b1').innerText = 'Avant / Après';
+    document.getElementById('b2').innerText = 'Résidentiel';
+    document.getElementById('b3').innerText = 'Nettoyage en profondeur';
+    document.getElementById('b4').innerText = 'Commercial';
+    document.getElementById('b5').innerText = 'Déménagement';
+    document.getElementById('b6').innerText = 'Finition détaillée';
 
-    document.getElementById('formTitle').innerText = 'Demander un devis';
-    document.getElementById('nameInput').placeholder = 'Nom complet';
-    document.getElementById('emailInput').placeholder = 'Adresse e-mail';
-    document.getElementById('phoneInput').placeholder = 'Numéro de téléphone';
-    document.getElementById('serviceSelect').options[0].text = 'Sélectionner un service';
-    document.getElementById('messageInput').placeholder = 'Décrivez vos besoins...';
+    document.getElementById('cta-title').innerText = 'Vous voulez ces résultats ?';
+    document.getElementById('cta-text').innerText = 'Obtenez un service professionnel fiable avec des résultats rapides.';
+    document.getElementById('cta-btn').innerText = 'Demander un devis';
 
-    document.getElementById('submitBtn').innerText = 'Demander un devis';
-
-    document.getElementById('ctaTitle').innerText = 'Prêt à réserver ?';
-    document.getElementById('ctaText').innerText = 'Service professionnel avec des résultats fiables.';
-    document.getElementById('ctaBtn').innerText = 'Appeler';
-
-    document.getElementById('floatBtn').innerText = 'Devis';
-
-  } else {
-    document.getElementById('floatBtn').innerText = 'Quote';
+    document.getElementById('float-btn').innerText = 'Devis';
   }
 }
 
-window.onload = applyLanguage;
+document.addEventListener('DOMContentLoaded', applyLanguage);
 </script>
 
 </body>
