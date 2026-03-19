@@ -5,12 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Our Cleaning Process | North Crescent Facility Solutions</title>
+<meta name="description" content="Discover our professional cleaning process. Structured, reliable, and designed to deliver high-quality results every time.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* ✅ SCROLL FIX */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+</style>
+
 </head>
 
-<body>
+<body data-page="process">
 
 <header>
   <div class="container header-inner">
@@ -22,7 +33,6 @@
       </div>
     </div>
 
-    <!-- NAV + LANG -->
     <div class="nav-wrapper">
       <nav>
         <a href="index.html">Home</a>
@@ -87,7 +97,7 @@
           <div class="badge" id="step2-badge">Step 2</div>
           <h3 id="step2-title">Customized Plan</h3>
           <p id="step2-text">
-            We create a cleaning plan tailored to your property, schedule, and specific requirements.
+            We create a cleaning plan tailored to your property and needs.
           </p>
         </div>
 
@@ -95,7 +105,7 @@
           <div class="badge" id="step3-badge">Step 3</div>
           <h3 id="step3-title">Professional Cleaning</h3>
           <p id="step3-text">
-            Our trained team arrives on time and performs detailed, high-quality cleaning using professional methods.
+            Our team performs detailed, high-quality cleaning using professional methods.
           </p>
         </div>
 
@@ -103,7 +113,7 @@
           <div class="badge" id="step4-badge">Step 4</div>
           <h3 id="step4-title">Quality Check</h3>
           <p id="step4-text">
-            We inspect every area to ensure everything meets our high standards.
+            We inspect every area to ensure it meets our standards.
           </p>
         </div>
 
@@ -111,7 +121,7 @@
           <div class="badge" id="step5-badge">Step 5</div>
           <h3 id="step5-title">Client Satisfaction</h3>
           <p id="step5-text">
-            We ensure you are fully satisfied and your space is spotless, fresh, and ready.
+            We ensure your complete satisfaction and a spotless space.
           </p>
         </div>
 
@@ -119,7 +129,7 @@
           <div class="badge" id="promise-badge">Our Promise</div>
           <h3 id="promise-title">Consistent Quality</h3>
           <p id="promise-text">
-            Every service is delivered with attention to detail and a commitment to excellence.
+            Every service is delivered with attention to detail and excellence.
           </p>
         </div>
 
@@ -140,10 +150,12 @@
       <div class="divider"></div>
 
       <p class="text-box" id="cta-text">
-        Book your cleaning today and let our professional team take care of everything.
+        Book your cleaning today and let our team handle everything.
       </p>
 
-      <a href="contact.html" class="btn btn-primary" id="cta-btn">Request a Free Quote</a>
+      <a href="contact.html" class="btn btn-primary" id="cta-btn">
+        Request a Free Quote
+      </a>
 
     </div>
 
@@ -151,77 +163,15 @@
 </section>
 
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html" id="float-btn">Get a Free Quote</a>
-<a class="whatsapp" href="https://wa.me/14288880542">💬</a>
+<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="whatsapp" href="https://wa.me/14288880542" target="_blank">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
-<!-- 🌍 TRANSLATOR CORREGIDO -->
-<script>
-function setLanguage(lang) {
-  localStorage.setItem('lang', lang);
-  applyLanguage();
-}
-
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
-
-  if (lang === 'fr') {
-
-    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
-    document.querySelectorAll('nav a')[1].innerText = 'Services';
-    document.querySelectorAll('nav a')[2].innerText = 'Processus';
-    document.querySelectorAll('nav a')[3].innerText = 'Avis';
-    document.querySelectorAll('nav a')[4].innerText = 'Nos travaux';
-    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
-    document.querySelectorAll('nav a')[6].innerText = 'Contact';
-
-    document.getElementById('badge-process').innerText = 'Notre processus';
-    document.getElementById('hero-title').innerText = 'Comment nous livrons des résultats professionnels';
-    document.getElementById('hero-sub').innerText = 'Simple, structuré et axé sur la qualité';
-
-    document.getElementById('section-title').innerText = 'Comment nous travaillons';
-    document.getElementById('section-text').innerText = 'Notre processus garantit qualité, efficacité et satisfaction totale.';
-
-    document.getElementById('step1-badge').innerText = 'Étape 1';
-    document.getElementById('step1-title').innerText = 'Demande et consultation';
-    document.getElementById('step1-text').innerText = 'Contactez-nous et expliquez vos besoins. Nous analysons votre espace.';
-
-    document.getElementById('step2-badge').innerText = 'Étape 2';
-    document.getElementById('step2-title').innerText = 'Plan personnalisé';
-    document.getElementById('step2-text').innerText = 'Nous créons un plan adapté à votre propriété et vos besoins.';
-
-    document.getElementById('step3-badge').innerText = 'Étape 3';
-    document.getElementById('step3-title').innerText = 'Nettoyage professionnel';
-    document.getElementById('step3-text').innerText = 'Notre équipe réalise un nettoyage détaillé et de haute qualité.';
-
-    document.getElementById('step4-badge').innerText = 'Étape 4';
-    document.getElementById('step4-title').innerText = 'Contrôle qualité';
-    document.getElementById('step4-text').innerText = 'Nous vérifions chaque détail pour garantir nos standards.';
-
-    document.getElementById('step5-badge').innerText = 'Étape 5';
-    document.getElementById('step5-title').innerText = 'Satisfaction client';
-    document.getElementById('step5-text').innerText = 'Nous assurons votre satisfaction complète.';
-
-    document.getElementById('promise-badge').innerText = 'Notre promesse';
-    document.getElementById('promise-title').innerText = 'Qualité constante';
-    document.getElementById('promise-text').innerText = 'Chaque service est livré avec excellence et attention.';
-
-    document.getElementById('cta-title').innerText = 'Prêt à essayer notre processus ?';
-    document.getElementById('cta-text').innerText = 'Réservez dès aujourd’hui et laissez-nous nous occuper de tout.';
-    document.getElementById('cta-btn').innerText = 'Demander un devis';
-
-    document.getElementById('float-btn').innerText = 'Devis';
-
-  } else {
-    console.log("Language: EN");
-  }
-}
-
-document.addEventListener('DOMContentLoaded', applyLanguage);
-</script>
+<!-- ✅ TRANSLATOR GLOBAL -->
+<script src="js/translator.js"></script>
 
 </body>
 </html>
