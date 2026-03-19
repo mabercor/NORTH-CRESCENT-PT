@@ -33,6 +33,7 @@
         <a href="contact.html" class="cta">Contact</a>
       </nav>
 
+      <!-- BOTÓN IDIOMA -->
       <div class="lang-switch">
         <button onclick="setLanguage('en')">EN</button>
         <button onclick="setLanguage('fr')">FR</button>
@@ -44,7 +45,6 @@
 
 <main>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
 
@@ -56,7 +56,6 @@
         Explore our services and find the perfect solution for your space.
       </p>
 
-      <!-- 🔥 DOBLE CTA -->
       <a href="contact.html" class="btn" id="hero-btn">Request a Quote</a>
 
       <a href="services.html" class="btn" style="margin-left:10px; background:#1E3A5F;" id="hero-btn2">
@@ -71,7 +70,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section>
   <div class="container">
     <div class="section-box">
@@ -89,29 +87,25 @@
   </div>
 </section>
 
-<!-- 🔥 MINI SERVICES (TRÁFICO A SERVICES) -->
 <section>
   <div class="container">
 
-    <h2 class="section-title">Our Services</h2>
+    <h2 class="section-title" id="services-mini-title">Our Services</h2>
     <div class="divider"></div>
 
     <div class="grid grid-3">
-
-      <div class="card"><h3>Residential Cleaning</h3></div>
-      <div class="card"><h3>Commercial Cleaning</h3></div>
-      <div class="card"><h3>Move-In / Move-Out</h3></div>
-
+      <div class="card"><h3 id="s1">Residential Cleaning</h3></div>
+      <div class="card"><h3 id="s2">Commercial Cleaning</h3></div>
+      <div class="card"><h3 id="s3">Move-In / Move-Out</h3></div>
     </div>
 
     <div style="text-align:center; margin-top:30px;">
-      <a href="services.html" class="btn">View All Services</a>
+      <a href="services.html" class="btn" id="services-btn">View All Services</a>
     </div>
 
   </div>
 </section>
 
-<!-- WHY CHOOSE US -->
 <section>
   <div class="container">
     <div class="section-box">
@@ -120,21 +114,15 @@
       <div class="divider"></div>
 
       <div class="grid grid-3">
-
-        <div class="card"><h3>Reliable Service</h3><p>We show up on time, every time.</p></div>
-        <div class="card"><h3>Attention to Detail</h3><p>No corner goes untouched.</p></div>
-        <div class="card"><h3>Professional Team</h3><p>Trained and insured staff.</p></div>
-        <div class="card"><h3>Flexible Scheduling</h3><p>Services tailored to your needs.</p></div>
-        <div class="card"><h3>Satisfaction Guaranteed</h3><p>We stand behind our work.</p></div>
-        <div class="card"><h3>Consistent Quality</h3><p>High standards every visit.</p></div>
-
+        <div class="card"><h3 id="w1">Reliable Service</h3></div>
+        <div class="card"><h3 id="w2">Attention to Detail</h3></div>
+        <div class="card"><h3 id="w3">Professional Team</h3></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
 <section>
   <div class="container">
     <div class="section-box" style="text-align:center;">
@@ -146,9 +134,8 @@
         Contact us today or explore our services to find the best solution for your needs.
       </p>
 
-      <!-- 🔥 CTA DOBLE -->
-      <a href="contact.html" class="btn">Get a Free Quote</a>
-      <a href="services.html" class="btn" style="margin-left:10px; background:#1E3A5F;">
+      <a href="contact.html" class="btn" id="cta-btn">Get a Free Quote</a>
+      <a href="services.html" class="btn" style="margin-left:10px; background:#1E3A5F;" id="cta-btn2">
         Explore Our Services
       </a>
 
@@ -158,7 +145,6 @@
 
 </main>
 
-<!-- FLOAT BUTTONS -->
 <a class="quote-float" href="contact.html">Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
@@ -166,33 +152,58 @@
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
-<!-- 🔥 SCRIPT TRADUCTOR (MISMO QUE YA TENÍAS) -->
+<!-- ✅ SCRIPT CORREGIDO -->
 <script>
 function setLanguage(lang) {
   localStorage.setItem('lang', lang);
   applyLanguage();
 }
 
+function safeText(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.innerText = text;
+}
+
 function applyLanguage() {
   const lang = localStorage.getItem('lang') || 'en';
 
+  const navLinks = document.querySelectorAll('nav a');
+  const quoteBtn = document.querySelector('.quote-float');
+
   if (lang === 'fr') {
 
-    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
-    document.querySelectorAll('nav a')[1].innerText = 'Services';
-    document.querySelectorAll('nav a')[2].innerText = 'Processus';
-    document.querySelectorAll('nav a')[3].innerText = 'Avis';
-    document.querySelectorAll('nav a')[4].innerText = 'Réalisations';
-    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
-    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+    if (navLinks.length >= 7) {
+      navLinks[0].innerText = 'Accueil';
+      navLinks[1].innerText = 'Services';
+      navLinks[2].innerText = 'Processus';
+      navLinks[3].innerText = 'Avis';
+      navLinks[4].innerText = 'Réalisations';
+      navLinks[5].innerText = 'Galerie';
+      navLinks[6].innerText = 'Contact';
+    }
 
-    document.getElementById('hero-title').innerText = 'Services de nettoyage professionnels fiables';
-    document.getElementById('hero-sub').innerText = 'Services de nettoyage résidentiels et commerciaux à Moncton.';
-    document.getElementById('hero-btn').innerText = 'Demander un devis';
-    document.getElementById('hero-btn2').innerText = 'Voir nos services';
+    if (quoteBtn) quoteBtn.innerText = 'Devis';
+
+    safeText('hero-title', 'Services de nettoyage professionnels');
+    safeText('hero-sub', 'Services résidentiels et commerciaux à Moncton.');
+    safeText('hero-btn', 'Demander un devis');
+    safeText('hero-btn2', 'Voir nos services');
+
+    safeText('about-title', 'À propos de nous');
+    safeText('services-mini-title', 'Nos services');
+    safeText('services-btn', 'Voir tous les services');
+
+    safeText('w1', 'Service fiable');
+    safeText('w2', 'Attention aux détails');
+    safeText('w3', 'Équipe professionnelle');
+
+    safeText('cta-title', 'Prêt à travailler avec nous ?');
+    safeText('cta-text', 'Contactez-nous ou explorez nos services.');
+    safeText('cta-btn', 'Obtenir un devis');
+    safeText('cta-btn2', 'Explorer les services');
 
   } else {
-    location.reload();
+    if (quoteBtn) quoteBtn.innerText = 'Quote';
   }
 }
 
