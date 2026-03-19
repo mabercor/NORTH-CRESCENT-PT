@@ -138,6 +138,52 @@ footer {
   text-align: center;
   padding: 30px;
 }
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 60px auto 40px;
+  padding: 0 40px;
+  gap: 20px;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 15px 25px;
+  min-width: 150px;
+  min-height: 44px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.nav-button:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  color: white;
+}
+
+.nav-button.prev { margin-right: auto; }
+.nav-button.next { margin-left: auto; }
+
+@media(max-width: 768px) {
+  .nav-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 20px;
+    margin: 40px auto 20px;
+  }
+  .nav-button.prev,
+  .nav-button.next { margin: 0; }
+}
 </style>
 </head>
 
@@ -198,6 +244,11 @@ footer {
 
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">WhatsApp</a>
+
+<nav class="nav-buttons" aria-label="Page navigation">
+  <a href="services.html" class="nav-button prev" rel="prev">← Previous: Services</a>
+  <a href="work.html" class="nav-button next" rel="next">Next: Our Work →</a>
+</nav>
 
 <footer>
 <p>© 2026 North Crescent Facility Solutions Inc</p>
