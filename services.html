@@ -25,7 +25,6 @@ body {
   color: var(--dark);
 }
 
-/* HEADER */
 header {
   background: white;
   display: flex;
@@ -42,7 +41,6 @@ nav a {
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
-  position: relative;
 }
 
 nav a:hover { color: var(--accent); }
@@ -54,7 +52,6 @@ nav .cta {
   border-radius: 25px;
 }
 
-/* HERO */
 .hero-small {
   height: 40vh;
   background: linear-gradient(rgba(30,58,95,0.7), rgba(30,58,95,0.7)),
@@ -66,11 +63,8 @@ nav .cta {
   color: white;
 }
 
-.hero-small h1 {
-  font-size: 2.5rem;
-}
+.hero-small h1 { font-size: 2.5rem; }
 
-/* SECTION */
 section { padding: 60px 40px; }
 
 h2 {
@@ -79,7 +73,6 @@ h2 {
   color: var(--primary);
 }
 
-/* SERVICES GRID */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -115,7 +108,6 @@ h2 {
   padding: 0 15px 20px;
 }
 
-/* FLOAT BUTTON */
 .quote-float {
   position: fixed;
   bottom: 90px;
@@ -128,11 +120,8 @@ h2 {
   font-weight: 600;
 }
 
-.quote-float:hover {
-  background: var(--primary);
-}
+.quote-float:hover { background: var(--primary); }
 
-/* WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -144,7 +133,6 @@ h2 {
   text-decoration: none;
 }
 
-/* FOOTER */
 footer {
   background: var(--primary);
   color: white;
@@ -170,12 +158,10 @@ footer {
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero-small">
 <h1>Our Professional Cleaning Services</h1>
 </section>
 
-<!-- SERVICES -->
 <section>
 <h2>What We Offer</h2>
 
@@ -183,38 +169,38 @@ footer {
 
 <div class="card">
 <img src="images/residential.jpg">
-<h3>Residential Cleaning</h3>
-<p>Professional home cleaning that removes dust, grime, and buildup, leaving your living space fresh and comfortable.</p>
+<h3 id="s1">Residential Cleaning</h3>
+<p id="p1">Professional home cleaning that removes dust, grime, and buildup, leaving your living space fresh and comfortable.</p>
 </div>
 
 <div class="card">
 <img src="images/deep-cleaning.jpg">
-<h3>Deep Cleaning - Restaurants</h3>
-<p>We remove grease from ovens, hoods, and surfaces, leaving your kitchen spotless and inspection-ready.</p>
+<h3 id="s2">Deep Cleaning - Restaurants</h3>
+<p id="p2">We remove grease from ovens, hoods, and surfaces, leaving your kitchen spotless and inspection-ready.</p>
 </div>
 
 <div class="card">
 <img src="images/move.jpg">
-<h3>Move-In / Move-Out</h3>
-<p>Complete cleaning so your space is spotless and ready for the next chapter.</p>
+<h3 id="s3">Move-In / Move-Out</h3>
+<p id="p3">Complete cleaning so your space is spotless and ready for the next chapter.</p>
 </div>
 
 <div class="card">
 <img src="images/commercial.jpg">
-<h3>Commercial Cleaning</h3>
-<p>Cleaning for offices and commercial spaces to keep your workplace spotless.</p>
+<h3 id="s4">Commercial Cleaning</h3>
+<p id="p4">Cleaning for offices and commercial spaces to keep your workplace spotless.</p>
 </div>
 
 <div class="card">
 <img src="images/airbnb.jpg">
-<h3>Airbnb Cleaning</h3>
-<p>Keep your rental guest-ready and ensure great reviews.</p>
+<h3 id="s5">Airbnb Cleaning</h3>
+<p id="p5">Keep your rental guest-ready and ensure great reviews.</p>
 </div>
 
 <div class="card">
 <img src="images/postconstruction.jpg">
-<h3>Post-Construction</h3>
-<p>We remove dust and debris, leaving your property move-in ready.</p>
+<h3 id="s6">Post-Construction</h3>
+<p id="p6">We remove dust and debris, leaving your property move-in ready.</p>
 </div>
 
 </div>
@@ -227,5 +213,20 @@ footer {
 <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
-</body>
-</html>
+<script>
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  if (lang === 'fr') {
+    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Processus';
+    document.querySelectorAll('nav a')[3].innerText = 'Avis';
+    document.querySelectorAll('nav a')[4].innerText = 'Nos travaux';
+    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+
+    const btn = document.querySelector('.quote-float');
+    if (btn) btn.innerText = 'Obtenir un devis';
+
+    document.querySelector('.hero-sm
