@@ -23,15 +23,23 @@
       </div>
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="process.html">Process</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="work.html">Our Work</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="cta">Contact</a>
-    </nav>
+    <!-- NAV + LANG -->
+    <div class="nav-wrapper">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="process.html">Process</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="work.html">Our Work</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+      </div>
+    </div>
 
   </div>
 </header>
@@ -40,11 +48,11 @@
 <section class="hero">
   <div class="container hero-content">
 
-    <div class="badge">Our Services</div>
+    <div class="badge" id="badge-services">Our Services</div>
 
-    <h1>Professional Cleaning Solutions</h1>
+    <h1 id="hero-title">Professional Cleaning Solutions</h1>
 
-    <p class="hero-sub">
+    <p class="hero-sub" id="hero-sub">
       Reliable, detailed, and tailored to your needs
     </p>
 
@@ -59,84 +67,78 @@
 
     <div class="section-box">
 
-      <h2 class="section-title">What We Offer</h2>
+      <h2 class="section-title" id="section-title">What We Offer</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
+      <p class="text-box" id="section-text">
         We provide high-quality cleaning services designed to keep your space spotless, healthy, and welcoming.
       </p>
 
       <div class="grid grid-3">
 
-        <!-- SERVICE 1 -->
         <div class="card">
           <div class="badge">Residential</div>
           <div class="image-frame">
-            <img src="images/residential.jpg" alt="Residential Cleaning">
+            <img src="images/residential.jpg" alt="">
           </div>
           <h3 id="s1">Residential Cleaning</h3>
           <p id="p1">
-            Professional home cleaning that removes dust, grime, and buildup, leaving your space fresh and comfortable.
+            Professional home cleaning that removes dust, grime, and buildup.
           </p>
         </div>
 
-        <!-- SERVICE 2 -->
         <div class="card">
           <div class="badge">Deep Cleaning</div>
           <div class="image-frame">
-            <img src="images/deep-cleaning.jpg" alt="Deep Cleaning">
+            <img src="images/deep-cleaning.jpg" alt="">
           </div>
           <h3 id="s2">Deep Cleaning - Restaurants</h3>
           <p id="p2">
-            We remove grease from ovens, hoods, and surfaces, leaving your kitchen spotless and inspection-ready.
+            We remove grease and dirt, leaving your kitchen spotless and inspection-ready.
           </p>
         </div>
 
-        <!-- SERVICE 3 -->
         <div class="card">
           <div class="badge">Move Service</div>
           <div class="image-frame">
-            <img src="images/move.jpg" alt="Move Cleaning">
+            <img src="images/move.jpg" alt="">
           </div>
           <h3 id="s3">Move-In / Move-Out</h3>
           <p id="p3">
-            Complete cleaning so your space is spotless and ready for the next chapter.
+            Complete cleaning so your space is ready for the next chapter.
           </p>
         </div>
 
-        <!-- SERVICE 4 -->
         <div class="card">
           <div class="badge">Commercial</div>
           <div class="image-frame">
-            <img src="images/commercial.jpg" alt="Commercial Cleaning">
+            <img src="images/commercial.jpg" alt="">
           </div>
           <h3 id="s4">Commercial Cleaning</h3>
           <p id="p4">
-            Cleaning for offices and commercial spaces to maintain a professional environment.
+            Maintain a professional and clean environment for your business.
           </p>
         </div>
 
-        <!-- SERVICE 5 -->
         <div class="card">
           <div class="badge">Short-Term Rental</div>
           <div class="image-frame">
-            <img src="images/airbnb.jpg" alt="Airbnb Cleaning">
+            <img src="images/airbnb.jpg" alt="">
           </div>
           <h3 id="s5">Airbnb Cleaning</h3>
           <p id="p5">
-            Keep your rental guest-ready and ensure consistent 5-star reviews.
+            Keep your rental guest-ready and maintain 5-star standards.
           </p>
         </div>
 
-        <!-- SERVICE 6 -->
         <div class="card">
           <div class="badge">Post-Construction</div>
           <div class="image-frame">
-            <img src="images/postconstruction.jpg" alt="Post Construction Cleaning">
+            <img src="images/postconstruction.jpg" alt="">
           </div>
           <h3 id="s6">Post-Construction</h3>
           <p id="p6">
-            We remove dust and debris, leaving your property clean, safe, and move-in ready.
+            Remove dust and debris after construction or renovation.
           </p>
         </div>
 
@@ -153,14 +155,14 @@
 
     <div class="section-box" style="text-align:center;">
 
-      <h2>Need Professional Cleaning?</h2>
+      <h2 id="cta-title">Need Professional Cleaning?</h2>
       <div class="divider"></div>
 
-      <p class="text-box">
-        Get reliable service, detailed results, and a team you can trust.
+      <p class="text-box" id="cta-text">
+        Get reliable service and a team you can trust.
       </p>
 
-      <a href="contact.html" class="btn btn-primary">Request a Free Quote</a>
+      <a href="contact.html" class="btn btn-primary" id="cta-btn">Request a Free Quote</a>
 
     </div>
 
@@ -168,18 +170,25 @@
 </section>
 
 <!-- FLOAT -->
-<a class="quote-float" href="contact.html">Get a Free Quote</a>
+<a class="quote-float" href="contact.html" id="float-btn">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">💬</a>
 
 <footer>
   <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
 
+<!-- 🌍 TRANSLATOR -->
 <script>
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
+}
+
 function applyLanguage() {
   const lang = localStorage.getItem('lang') || 'en';
 
   if (lang === 'fr') {
+
     document.querySelectorAll('nav a')[0].innerText = 'Accueil';
     document.querySelectorAll('nav a')[1].innerText = 'Services';
     document.querySelectorAll('nav a')[2].innerText = 'Processus';
@@ -188,13 +197,43 @@ function applyLanguage() {
     document.querySelectorAll('nav a')[5].innerText = 'Galerie';
     document.querySelectorAll('nav a')[6].innerText = 'Contact';
 
-    document.querySelector('.quote-float').innerText = 'Obtenir un devis';
+    document.getElementById('badge-services').innerText = 'Nos services';
+    document.getElementById('hero-title').innerText = 'Solutions de nettoyage professionnelles';
+    document.getElementById('hero-sub').innerText = 'Fiable, détaillé et adapté à vos besoins';
+
+    document.getElementById('section-title').innerText = 'Nos services';
+    document.getElementById('section-text').innerText = 'Nous offrons des services de nettoyage de haute qualité.';
+
+    document.getElementById('s1').innerText = 'Nettoyage résidentiel';
+    document.getElementById('p1').innerText = 'Nettoyage complet pour garder votre maison propre et confortable.';
+
+    document.getElementById('s2').innerText = 'Nettoyage en profondeur - Restaurants';
+    document.getElementById('p2').innerText = 'Élimination de la graisse et saleté pour une cuisine impeccable.';
+
+    document.getElementById('s3').innerText = 'Entrée / Sortie';
+    document.getElementById('p3').innerText = 'Nettoyage complet pour transition de propriété.';
+
+    document.getElementById('s4').innerText = 'Nettoyage commercial';
+    document.getElementById('p4').innerText = 'Maintenez un environnement professionnel et propre.';
+
+    document.getElementById('s5').innerText = 'Nettoyage Airbnb';
+    document.getElementById('p5').innerText = 'Préparez votre location pour des avis 5 étoiles.';
+
+    document.getElementById('s6').innerText = 'Post-construction';
+    document.getElementById('p6').innerText = 'Nettoyage après travaux pour un espace prêt à utiliser.';
+
+    document.getElementById('cta-title').innerText = 'Besoin d’un nettoyage professionnel ?';
+    document.getElementById('cta-text').innerText = 'Service fiable avec une équipe de confiance.';
+    document.getElementById('cta-btn').innerText = 'Demander un devis';
+
+    document.getElementById('float-btn').innerText = 'Devis';
+
   } else {
-    document.querySelector('.quote-float').innerText = 'Get a Free Quote';
+    location.reload();
   }
 }
 
-window.onload = applyLanguage;
+document.addEventListener('DOMContentLoaded', applyLanguage);
 </script>
 
 </body>
