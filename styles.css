@@ -121,14 +121,13 @@ nav a.cta:hover {
   background: var(--accent);
 }
 
-/* ===== HERO (EMPRESA - FIX FINAL) ===== */
+/* ===== HERO (EMPRESA) ===== */
 .hero {
   background: white;
   color: var(--dark);
   padding: 60px 0;
 }
 
-/* GRID HERO */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -207,6 +206,10 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 /* ===== CARD ===== */
 .card {
   background: white;
@@ -232,20 +235,23 @@ section {
   box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
-/* ===== IMAGE FRAME ===== */
-.image-frame {
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-.image-frame img {
+/* ===== FORM (NUEVO) ===== */
+form input,
+form select,
+form textarea {
   width: 100%;
-  transition: 0.4s;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
 }
 
-.image-frame:hover img {
-  transform: scale(1.05);
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
 }
 
 /* ===== BUTTON ===== */
