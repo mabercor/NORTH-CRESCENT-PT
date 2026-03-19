@@ -15,76 +15,78 @@
 
 <header>
   <div class="container header-inner">
+
     <div class="logo-container">
       <img src="images/logo.png" alt="North Crescent Logo">
       <div class="brand-title">North Crescent <span>Solutions</span></div>
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html" class="active cta">Contact</a>
-    </nav>
+    <!-- NAV + LANG -->
+    <div class="nav-wrapper">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html" class="active cta">Contact</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('fr')">FR</button>
+      </div>
+    </div>
+
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container hero-content">
-    <h1>Get Your Free Quote</h1>
-    <p class="hero-sub">Fast response. Professional service you can trust.</p>
+    <h1 id="hero-title">Get Your Free Quote</h1>
+    <p class="hero-sub" id="hero-sub">Fast response. Professional service you can trust.</p>
 
     <div class="divider"></div>
 
-    <a href="#contact-form" class="btn btn-primary">Request a Free Quote</a>
-
-    <div class="scroll-down"></div>
+    <a href="#contact-form" class="btn btn-primary" id="hero-btn">Request a Free Quote</a>
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <section>
   <div class="container">
-
     <div class="section-box">
 
-      <h2 class="section-title">Let’s Talk</h2>
+      <h2 class="section-title" id="contact-title">Let’s Talk</h2>
       <div class="divider"></div>
 
       <div class="grid grid-3">
 
         <!-- INFO -->
         <div class="card">
-          <div class="badge">Contact Info</div>
+          <div class="badge" id="info-badge">Contact Info</div>
 
           <div class="text-box">
-            <p><strong>Location:</strong> Moncton, NB</p>
+            <p><strong id="loc-label">Location:</strong> Moncton, NB</p>
             <p><strong>Email:</strong> info@northcrescent.ca</p>
-            <p><strong>Phone:</strong> <a href="tel:+14288880542">+1 428 888 0542</a></p>
-          </div>
-
-          <div style="margin-top:15px;">
-            <a href="https://www.facebook.com/profile.php?id=61580557412140" target="_blank" class="btn">Facebook</a>
-            <a href="https://www.instagram.com/northcrescentcleaningsolutions/" target="_blank" class="btn">Instagram</a>
+            <p><strong id="phone-label">Phone:</strong> <a href="tel:+14288880542">+1 428 888 0542</a></p>
           </div>
         </div>
 
         <!-- FORM -->
         <div class="card" id="contact-form">
 
-          <div class="badge">Request a Quote</div>
+          <div class="badge" id="form-badge">Request a Quote</div>
 
           <form id="contactForm" action="https://formspree.io/f/xvzwvbed" method="POST">
 
             <div class="text-box">
-              <input type="text" name="name" placeholder="Full Name" required>
-              <input type="email" name="email" placeholder="Email Address" required>
-              <input type="tel" name="phone" placeholder="Phone Number">
+              <input type="text" name="name" id="name" placeholder="Full Name" required>
+              <input type="email" name="email" id="email" placeholder="Email Address" required>
+              <input type="tel" name="phone" id="phone" placeholder="Phone Number">
 
-              <select name="service" required>
+              <select name="service" id="service" required>
                 <option value="">Select Service</option>
                 <option>Residential Cleaning</option>
                 <option>Deep Cleaning</option>
@@ -94,10 +96,10 @@
                 <option>Airbnb Cleaning</option>
               </select>
 
-              <textarea name="message" rows="4" placeholder="Describe your needs..." required></textarea>
+              <textarea name="message" rows="4" id="message" placeholder="Describe your needs..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="margin-top:15px;">
+            <button type="submit" class="btn btn-primary" id="submit-btn" style="margin-top:15px;">
               Request a Free Quote
             </button>
 
@@ -108,16 +110,18 @@
           </form>
         </div>
 
-        <!-- IMAGE / VISUAL -->
+        <!-- VISUAL -->
         <div class="card">
-          <div class="badge">Professional Service</div>
+          <div class="badge" id="visual-badge">Professional Service</div>
 
           <div class="image-frame">
             <img src="images/hero.jpg" alt="Cleaning Service">
           </div>
 
           <div class="text-box" style="margin-top:15px;">
-            <p>We deliver reliable, high-quality cleaning services with attention to detail and customer satisfaction.</p>
+            <p id="visual-text">
+              We deliver reliable, high-quality cleaning services with attention to detail and customer satisfaction.
+            </p>
           </div>
         </div>
 
@@ -127,15 +131,15 @@
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- CTA -->
 <section>
   <div class="container">
     <div class="section-box" style="text-align:center;">
 
-      <h2>Reliable. Professional. Detail-Oriented.</h2>
+      <h2 id="cta-title">Reliable. Professional. Detail-Oriented.</h2>
       <div class="divider"></div>
 
-      <a href="services.html" class="btn btn-primary">Explore Services</a>
+      <a href="services.html" class="btn btn-primary" id="cta-btn">Explore Services</a>
 
     </div>
   </div>
@@ -145,11 +149,9 @@
   <p>© 2026 North Crescent Facility Solutions Ltd</p>
 </footer>
 
-<!-- FLOAT BUTTON -->
-<a href="https://wa.me/14288880542" target="_blank" class="whatsapp">
-  💬 Chat Now
-</a>
+<a href="https://wa.me/14288880542" target="_blank" class="whatsapp">💬</a>
 
+<!-- FORM SCRIPT -->
 <script>
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
@@ -172,6 +174,54 @@ form.addEventListener("submit", async function(e) {
     alert("Error sending message.");
   }
 });
+</script>
+
+<!-- 🌍 TRANSLATOR -->
+<script>
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  applyLanguage();
+}
+
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  if (lang === 'fr') {
+
+    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Processus';
+    document.querySelectorAll('nav a')[3].innerText = 'Galerie';
+    document.querySelectorAll('nav a')[4].innerText = 'Avis';
+    document.querySelectorAll('nav a')[5].innerText = 'Contact';
+
+    document.getElementById('hero-title').innerText = 'Obtenez votre devis gratuit';
+    document.getElementById('hero-sub').innerText = 'Réponse rapide. Service professionnel fiable.';
+    document.getElementById('hero-btn').innerText = 'Demander un devis';
+
+    document.getElementById('contact-title').innerText = 'Parlons-en';
+    document.getElementById('info-badge').innerText = 'Contact';
+    document.getElementById('form-badge').innerText = 'Demande de devis';
+
+    document.getElementById('name').placeholder = 'Nom complet';
+    document.getElementById('email').placeholder = 'Adresse email';
+    document.getElementById('phone').placeholder = 'Numéro de téléphone';
+    document.getElementById('message').placeholder = 'Décrivez vos besoins...';
+
+    document.getElementById('submit-btn').innerText = 'Envoyer la demande';
+
+    document.getElementById('visual-badge').innerText = 'Service professionnel';
+    document.getElementById('visual-text').innerText = 'Nous offrons des services fiables avec une grande attention aux détails.';
+
+    document.getElementById('cta-title').innerText = 'Fiable. Professionnel. Précis.';
+    document.getElementById('cta-btn').innerText = 'Voir les services';
+
+  } else {
+    location.reload();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', applyLanguage);
 </script>
 
 </body>
