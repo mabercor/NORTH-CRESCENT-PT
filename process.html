@@ -25,7 +25,6 @@ body {
   color: var(--dark);
 }
 
-/* HEADER */
 header {
   background: white;
   display: flex;
@@ -53,7 +52,6 @@ nav .cta {
   border-radius: 25px;
 }
 
-/* HERO */
 .hero-small {
   height: 40vh;
   background: linear-gradient(rgba(30,58,95,0.7), rgba(30,58,95,0.7)),
@@ -65,11 +63,8 @@ nav .cta {
   text-align: center;
 }
 
-.hero-small h1 {
-  font-size: 2.5rem;
-}
+.hero-small h1 { font-size: 2.5rem; }
 
-/* SECTION */
 section { padding: 60px 40px; }
 
 h2 {
@@ -78,11 +73,7 @@ h2 {
   color: var(--primary);
 }
 
-/* PROCESS STEPS */
-.process {
-  max-width: 900px;
-  margin: auto;
-}
+.process { max-width: 900px; margin: auto; }
 
 .step {
   background: white;
@@ -93,16 +84,10 @@ h2 {
   transition: 0.3s;
 }
 
-.step:hover {
-  transform: translateY(-5px);
-}
+.step:hover { transform: translateY(-5px); }
 
-.step h3 {
-  color: var(--primary);
-  margin-bottom: 10px;
-}
+.step h3 { color: var(--primary); margin-bottom: 10px; }
 
-/* FLOAT BUTTON */
 .quote-float {
   position: fixed;
   bottom: 90px;
@@ -115,11 +100,8 @@ h2 {
   font-weight: 600;
 }
 
-.quote-float:hover {
-  background: var(--primary);
-}
+.quote-float:hover { background: var(--primary); }
 
-/* WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -131,7 +113,6 @@ h2 {
   text-decoration: none;
 }
 
-/* FOOTER */
 footer {
   background: var(--primary);
   color: white;
@@ -157,51 +138,110 @@ footer {
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero-small">
-<h1>Our Cleaning Process</h1>
+  <h1>Our Cleaning Process</h1>
 </section>
 
-<!-- PROCESS -->
 <section>
-<h2>How We Work</h2>
+  <h2>How We Work</h2>
 
-<div class="process">
+  <div class="process">
 
-<div class="step">
-<h3>1. Request & Consultation</h3>
-<p>Contact us and tell us about your cleaning needs. We assess your space and recommend the best service.</p>
-</div>
+    <div class="step">
+      <h3>1. Request & Consultation</h3>
+      <p>Contact us and tell us about your cleaning needs. We assess your space and recommend the best service.</p>
+    </div>
 
-<div class="step">
-<h3>2. Customized Plan</h3>
-<p>We create a cleaning plan tailored to your property, schedule, and specific requirements.</p>
-</div>
+    <div class="step">
+      <h3>2. Customized Plan</h3>
+      <p>We create a cleaning plan tailored to your property, schedule, and specific requirements.</p>
+    </div>
 
-<div class="step">
-<h3>3. Professional Cleaning</h3>
-<p>Our trained team arrives on time and performs detailed, high-quality cleaning using professional methods.</p>
-</div>
+    <div class="step">
+      <h3>3. Professional Cleaning</h3>
+      <p>Our trained team arrives on time and performs detailed, high-quality cleaning using professional methods.</p>
+    </div>
 
-<div class="step">
-<h3>4. Quality Check</h3>
-<p>We inspect every area to ensure everything meets our high standards.</p>
-</div>
+    <div class="step">
+      <h3>4. Quality Check</h3>
+      <p>We inspect every area to ensure everything meets our high standards.</p>
+    </div>
 
-<div class="step">
-<h3>5. Client Satisfaction</h3>
-<p>We make sure you are fully satisfied and your space looks spotless, fresh, and ready.</p>
-</div>
+    <div class="step">
+      <h3>5. Client Satisfaction</h3>
+      <p>We make sure you are fully satisfied and your space looks spotless, fresh, and ready.</p>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <a class="quote-float" href="contact.html">Get a Free Quote</a>
 <a class="whatsapp" href="https://wa.me/14288880542">WhatsApp</a>
 
 <footer>
-<p>© 2026 North Crescent Facility Solutions Inc</p>
+  <p>© 2026 North Crescent Facility Solutions Inc</p>
 </footer>
+
+<script>
+function applyLanguage() {
+  const lang = localStorage.getItem('lang') || 'en';
+
+  if (lang === 'fr') {
+    // NAV
+    document.querySelectorAll('nav a')[0].innerText = 'Accueil';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Processus';
+    document.querySelectorAll('nav a')[3].innerText = 'Avis';
+    document.querySelectorAll('nav a')[4].innerText = 'Nos travaux';
+    document.querySelectorAll('nav a')[5].innerText = 'Galerie';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact';
+
+    // CTA
+    const btn = document.querySelector('.quote-float');
+    if (btn) btn.innerText = 'Obtenir un devis';
+
+    // CONTENT
+    document.querySelector('.hero-small h1').innerText = 'Notre processus de nettoyage';
+    document.querySelector('h2').innerText = 'Comment nous travaillons';
+
+    const steps = document.querySelectorAll('.step h3');
+    const desc = document.querySelectorAll('.step p');
+
+    steps[0].innerText = '1. Demande et consultation';
+    desc[0].innerText = 'Contactez-nous et expliquez vos besoins. Nous évaluons votre espace et recommandons le meilleur service.';
+
+    steps[1].innerText = '2. Plan personnalisé';
+    desc[1].innerText = 'Nous créons un plan adapté à votre propriété et vos besoins.';
+
+    steps[2].innerText = '3. Nettoyage professionnel';
+    desc[2].innerText = 'Notre équipe intervient avec des méthodes professionnelles et efficaces.';
+
+    steps[3].innerText = '4. Contrôle qualité';
+    desc[3].innerText = 'Nous vérifions chaque détail pour garantir un résultat impeccable.';
+
+    steps[4].innerText = '5. Satisfaction client';
+    desc[4].innerText = 'Votre satisfaction est notre priorité.';
+
+  } else {
+    // NAV
+    document.querySelectorAll('nav a')[0].innerText = 'Home';
+    document.querySelectorAll('nav a')[1].innerText = 'Services';
+    document.querySelectorAll('nav a')[2].innerText = 'Process';
+    document.querySelectorAll('nav a')[3].innerText = 'Reviews';
+    document.querySelectorAll('nav a')[4].innerText = 'Our Work';
+    document.querySelectorAll('nav a')[5].innerText = 'Gallery';
+    document.querySelectorAll('nav a')[6].innerText = 'Contact Us';
+
+    const btn = document.querySelector('.quote-float');
+    if (btn) btn.innerText = 'Get a Free Quote';
+
+    document.querySelector('.hero-small h1').innerText = 'Our Cleaning Process';
+    document.querySelector('h2').innerText = 'How We Work';
+  }
+}
+
+window.onload = applyLanguage;
+</script>
 
 </body>
 </html>
