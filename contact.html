@@ -1,97 +1,263 @@
-<!-- 🌍 TRANSLATOR CORREGIDO -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | North Crescent Facility Solutions</title>
+<meta name="description" content="Get a free quote for professional cleaning services in Moncton, NB. Fast response and reliable service.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #1E3A5F;
+  --accent: #4A9B8C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+  transition: opacity 0.2s ease;
+}
+
+/* HEADER */
+header {
+  background: white;
+  padding: 15px 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.lang-switch button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.85)),
+              url('images/contact.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+/* SECTION */
+.section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* FORM */
+.contact-form {
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.contact-form button {
+  background: var(--accent);
+  color: white;
+  padding: 14px;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* SUCCESS */
+.success-msg {
+  display: none;
+  margin-top: 15px;
+  color: green;
+  font-weight: 600;
+}
+
+/* SOCIAL */
+.socials {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: white;
+  background: var(--primary);
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* FLOAT */
+.quote-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--primary);
+  color: white;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body data-page="contact">
+
+<header>
+  <div class="header-inner">
+    <h2>North Crescent</h2>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="work.html">Our Work</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('fr')">FR</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1 id="hero-title">Get Your Free Quote</h1>
+  <p>Fast response. Professional service. Guaranteed quality.</p>
+</section>
+
+<section class="section">
+  <div class="contact-form">
+    <h2 id="contact-title">Let’s Talk</h2>
+
+    <!-- FORM (FORMSPREE) -->
+    <form id="contactForm" action="https://formspree.io/f/xvzwvbed" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number">
+      <textarea name="message" rows="5" placeholder="Tell us about your cleaning needs"></textarea>
+      <button type="submit" id="submit-btn">Request a Free Quote</button>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      ✅ Request sent successfully! We will contact you soon.
+    </div>
+
+    <!-- SOCIAL + CONTACT -->
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61580557412140" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/northcrescentcleaningsolutions/" target="_blank">Instagram</a>
+      <a href="mailto:info@northcrescentcleaning.com">Email</a>
+      <a href="https://wa.me/14288880542" target="_blank">WhatsApp</a>
+    </div>
+
+  </div>
+</section>
+
+<a href="https://wa.me/14288880542" class="quote-float">Get a Free Quote</a>
+
+<footer>
+  © 2026 North Crescent Facility Solutions Inc
+</footer>
+
+<!-- TRANSLATOR -->
+<script src="js/translator.js"></script>
+
+<!-- SUCCESS HANDLER -->
 <script>
-function setLanguage(lang) {
-  localStorage.setItem('lang', lang);
-  applyLanguage();
-}
+const form = document.getElementById("contactForm");
 
-function safeText(id, text) {
-  const el = document.getElementById(id);
-  if (el) el.innerText = text;
-}
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-function safePlaceholder(id, text) {
-  const el = document.getElementById(id);
-  if (el) el.placeholder = text;
-}
+  const data = new FormData(form);
 
-function applyLanguage() {
-  const lang = localStorage.getItem('lang') || 'en';
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
 
-  const navLinks = document.querySelectorAll('nav a');
-
-  if (lang === 'fr') {
-
-    if (navLinks.length >= 6) {
-      navLinks[0].innerText = 'Accueil';
-      navLinks[1].innerText = 'Services';
-      navLinks[2].innerText = 'Processus';
-      navLinks[3].innerText = 'Galerie';
-      navLinks[4].innerText = 'Avis';
-      navLinks[5].innerText = 'Contact';
-    }
-
-    safeText('hero-title', 'Obtenez votre devis gratuit');
-    safeText('hero-sub', 'Réponse rapide. Service professionnel fiable.');
-    safeText('hero-btn', 'Demander un devis');
-
-    safeText('contact-title', 'Parlons-en');
-    safeText('info-badge', 'Contact');
-    safeText('form-badge', 'Demande de devis');
-
-    safeText('loc-label', 'Emplacement :');
-    safeText('phone-label', 'Téléphone :');
-
-    safePlaceholder('name', 'Nom complet');
-    safePlaceholder('email', 'Adresse email');
-    safePlaceholder('phone', 'Numéro de téléphone');
-    safePlaceholder('message', 'Décrivez vos besoins...');
-
-    safeText('submit-btn', 'Envoyer la demande');
-
-    safeText('visual-badge', 'Service professionnel');
-    safeText('visual-text', 'Nous offrons des services fiables avec une grande attention aux détails.');
-
-    safeText('cta-title', 'Fiable. Professionnel. Précis.');
-    safeText('cta-btn', 'Voir les services');
-
+  if (response.ok) {
+    document.getElementById("successMsg").style.display = "block";
+    form.reset();
   } else {
-
-    // RESTAURAR SOLO LO NECESARIO (SIN RECARGAR)
-    if (navLinks.length >= 6) {
-      navLinks[0].innerText = 'Home';
-      navLinks[1].innerText = 'Services';
-      navLinks[2].innerText = 'Process';
-      navLinks[3].innerText = 'Gallery';
-      navLinks[4].innerText = 'Reviews';
-      navLinks[5].innerText = 'Contact';
-    }
-
-    safeText('hero-title', 'Get Your Free Quote');
-    safeText('hero-sub', 'Fast response. Professional service you can trust.');
-    safeText('hero-btn', 'Request a Free Quote');
-
-    safeText('contact-title', 'Let’s Talk');
-    safeText('info-badge', 'Contact Info');
-    safeText('form-badge', 'Request a Quote');
-
-    safeText('loc-label', 'Location:');
-    safeText('phone-label', 'Phone:');
-
-    safePlaceholder('name', 'Full Name');
-    safePlaceholder('email', 'Email Address');
-    safePlaceholder('phone', 'Phone Number');
-    safePlaceholder('message', 'Describe your needs...');
-
-    safeText('submit-btn', 'Request a Free Quote');
-
-    safeText('visual-badge', 'Professional Service');
-    safeText('visual-text', 'We deliver reliable, high-quality cleaning services with attention to detail and customer satisfaction.');
-
-    safeText('cta-title', 'Reliable. Professional. Detail-Oriented.');
-    safeText('cta-btn', 'Explore Services');
+    alert("Error sending request. Please try again.");
   }
-}
-
-document.addEventListener('DOMContentLoaded', applyLanguage);
+});
 </script>
+
+</body>
+</html>
